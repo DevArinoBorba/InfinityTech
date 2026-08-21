@@ -3,7 +3,7 @@
    Paleta: Azul Petróleo (#0E3A63), Azul Tech (#1B5AA0), Vermelho (#C41E2E)
    ========================================================================== */
 
-@import url('https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&family=Sora:wght@400;500;600;700;800&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,100..1000;1,9..40,100..1000&family=Sora:wght@400;500;600;700;800&display=swap');
 
 :root {
   /* Cores Principais */
@@ -34,7 +34,7 @@
 
   /* Tipografia */
   --font-heading: 'Sora', sans-serif;
-  --font-body: 'Plus Jakarta Sans', sans-serif;
+  --font-body: 'DM Sans', sans-serif;
 
   /* Sombras & Efeitos */
   --shadow-sm: 0 2px 8px rgba(14, 58, 99, 0.06);
@@ -361,10 +361,12 @@ img {
   position: absolute;
   bottom: 0;
   left: 0;
-  width: 0;
+  width: 100%;
   height: 2px;
   background: var(--accent);
-  transition: width var(--transition-fast);
+  transform: scaleX(0);
+  transform-origin: right;
+  transition: transform var(--transition-fast);
 }
 
 .nav-link:hover {
@@ -372,7 +374,8 @@ img {
 }
 
 .nav-link:hover::after {
-  width: 100%;
+  transform: scaleX(1);
+  transform-origin: left;
 }
 
 .header-actions {
@@ -552,19 +555,39 @@ img {
   color: var(--accent);
 }
 
-.faq-answer {
-  max-height: 0;
+.faq-item {
+  background: var(--bg-card);
+  border: 1px solid var(--border-color);
+  border-radius: var(--radius-lg);
   overflow: hidden;
-  transition: max-height 0.35s cubic-bezier(0.16, 1, 0.3, 1), padding 0.35s ease;
-  padding: 0 24px;
+  box-shadow: var(--shadow-sm);
+  display: grid;
+  grid-template-rows: auto 0fr;
+  transition: grid-template-rows 0.35s cubic-bezier(0.16, 1, 0.3, 1), border-color 0.2s ease, box-shadow 0.2s ease;
+}
+
+.faq-item.active {
+  grid-template-rows: auto 1fr;
+  border-color: rgba(27, 90, 160, 0.3);
+  box-shadow: var(--shadow-md);
+}
+
+.faq-answer {
+  overflow: hidden;
+  min-height: 0;
   color: var(--text-muted);
   font-size: 0.98rem;
   line-height: 1.65;
+  transition: opacity 0.25s ease;
+  opacity: 0;
+}
+
+.faq-answer-inner {
+  padding: 0 24px 22px 24px;
 }
 
 .faq-item.active .faq-answer {
-  max-height: 300px;
-  padding: 0 24px 22px 24px;
+  opacity: 1;
 }
 
 /* ==========================================================================
@@ -575,17 +598,7 @@ img {
   color: #D3DDE8;
   padding: 80px 0 30px 0;
   position: relative;
-  border-top: 1px solid rgba(255, 255, 255, 0.08);
-}
-
-.footer::before {
-  content: '';
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 4px;
-  background: linear-gradient(90deg, var(--accent) 0%, var(--secondary) 50%, var(--primary-light) 100%);
+  border-top: 1px solid rgba(255, 255, 255, 0.12);
 }
 
 .footer-grid {
