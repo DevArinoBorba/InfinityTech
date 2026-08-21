@@ -873,6 +873,16 @@ img {
 }
 
 @media (max-width: 768px) {
+  .container {
+    padding: 0 16px;
+  }
+  .btn {
+    white-space: normal;
+  }
+  .btn-lg {
+    padding: 14px 20px;
+    font-size: 0.98rem;
+  }
   .section {
     padding: 60px 0;
   }

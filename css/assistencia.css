@@ -668,18 +668,26 @@
   grid-template-columns: 1.15fr 0.85fr;
   gap: 48px;
   align-items: center;
+  width: 100%;
+  max-width: 100%;
+  min-width: 0;
+  box-sizing: border-box;
 }
 
 .contact-info-block {
   display: flex;
   flex-direction: column;
   gap: 22px;
+  min-width: 0;
+  width: 100%;
 }
 
 .contact-info-block h2 {
-  font-size: clamp(2rem, 3.2vw, 2.6rem);
+  font-size: clamp(1.6rem, 3.2vw, 2.6rem);
   font-weight: 800;
   line-height: 1.2;
+  word-break: break-word;
+  overflow-wrap: break-word;
 }
 
 .contact-details-list {
@@ -687,14 +695,25 @@
   flex-direction: column;
   gap: 16px;
   margin: 6px 0 10px 0;
+  min-width: 0;
+  width: 100%;
 }
 
 .contact-detail-item {
   display: flex;
-  align-items: center;
+  align-items: flex-start;
   gap: 14px;
   font-size: 0.98rem;
   color: var(--text-main);
+  min-width: 0;
+  width: 100%;
+}
+
+.contact-detail-item > div:last-child {
+  min-width: 0;
+  flex: 1;
+  word-break: break-word;
+  overflow-wrap: break-word;
 }
 
 .contact-detail-icon {
@@ -707,6 +726,7 @@
   align-items: center;
   justify-content: center;
   flex-shrink: 0;
+  margin-top: 2px;
 }
 
 .contact-detail-badge {
@@ -727,6 +747,14 @@
   flex-direction: column;
   gap: 12px;
   margin-top: 8px;
+  width: 100%;
+  min-width: 0;
+}
+
+.contact-cta-wrap .btn-whatsapp {
+  width: 100%;
+  max-width: 100%;
+  box-sizing: border-box;
 }
 
 /* Embed de Mapa Placeholder Moderno */
@@ -740,6 +768,10 @@
   border: 1px solid rgba(255, 255, 255, 0.12);
   box-shadow: 0 16px 36px rgba(10, 25, 41, 0.25);
   position: relative;
+  width: 100%;
+  max-width: 100%;
+  min-width: 0;
+  box-sizing: border-box;
 }
 
 .map-placeholder-header {
@@ -749,6 +781,8 @@
   display: flex;
   align-items: center;
   justify-content: space-between;
+  gap: 10px;
+  flex-wrap: wrap;
 }
 
 .map-header-title {
@@ -758,6 +792,7 @@
   font-size: 1rem;
   font-weight: 700;
   color: #FFFFFF;
+  min-width: 0;
 }
 
 .map-header-tag {
@@ -767,6 +802,7 @@
   background: rgba(126, 193, 255, 0.12);
   padding: 4px 10px;
   border-radius: var(--radius-full);
+  white-space: nowrap;
 }
 
 .map-embed-container {
@@ -777,6 +813,7 @@
   display: flex;
   align-items: center;
   justify-content: center;
+  width: 100%;
 }
 
 .map-embed-container iframe {
@@ -836,14 +873,22 @@
   display: flex;
   flex-direction: column;
   gap: 10px;
+  min-width: 0;
 }
 
 .map-footer-address {
   font-size: 0.88rem;
   color: #94A3B8;
   display: flex;
-  align-items: center;
+  align-items: flex-start;
   gap: 8px;
+  word-break: break-word;
+  overflow-wrap: break-word;
+}
+
+.map-footer-address svg {
+  flex-shrink: 0;
+  margin-top: 3px;
 }
 
 .map-footer-badge {
@@ -856,6 +901,8 @@
   padding: 8px 14px;
   border-radius: var(--radius-md);
   border: 1px solid rgba(126, 193, 255, 0.2);
+  word-break: break-word;
+  overflow-wrap: break-word;
 }
 
 .map-link-btn {
@@ -907,7 +954,8 @@
   }
   .contact-b2c-card {
     grid-template-columns: 1fr;
-    padding: 36px 24px;
+    padding: 36px 28px;
+    gap: 36px;
   }
 }
 
@@ -935,5 +983,90 @@
   }
   .trust-badge-media, .trust-badge-content {
     width: 100%;
+  }
+
+  /* Seção de Contato B2C Mobile */
+  .contact-b2c-card {
+    padding: 28px 18px;
+    gap: 28px;
+    border-radius: var(--radius-lg);
+  }
+  .contact-info-block {
+    gap: 16px;
+  }
+  .contact-info-block h2 {
+    font-size: clamp(1.35rem, 5.5vw, 1.75rem);
+  }
+  .contact-details-list {
+    gap: 12px;
+  }
+  .contact-detail-item {
+    font-size: 0.9rem;
+    gap: 12px;
+  }
+  .contact-detail-icon {
+    width: 36px;
+    height: 36px;
+  }
+  .map-placeholder-header {
+    padding: 14px 16px;
+  }
+  .map-header-title {
+    font-size: 0.92rem;
+  }
+  .map-header-tag {
+    font-size: 0.7rem;
+  }
+  .map-embed-container {
+    height: 200px;
+  }
+  .map-placeholder-footer {
+    padding: 16px;
+    gap: 10px;
+  }
+  .map-footer-address {
+    font-size: 0.82rem;
+  }
+  .map-footer-badge {
+    font-size: 0.78rem;
+    padding: 6px 10px;
+    width: 100%;
+    justify-content: center;
+    text-align: center;
+  }
+}
+
+@media (max-width: 480px) {
+  .contact-b2c-card {
+    padding: 20px 14px;
+    gap: 22px;
+    border-radius: var(--radius-md);
+  }
+  .contact-info-block h2 {
+    font-size: 1.3rem;
+  }
+  .contact-info-block p {
+    font-size: 0.88rem;
+  }
+  .contact-detail-item {
+    font-size: 0.85rem;
+    gap: 10px;
+  }
+  .contact-detail-icon {
+    width: 32px;
+    height: 32px;
+  }
+  .contact-detail-icon svg {
+    width: 16px;
+    height: 16px;
+  }
+  .map-placeholder-header {
+    padding: 12px 14px;
+  }
+  .map-placeholder-footer {
+    padding: 14px 12px;
+  }
+  .map-link-btn {
+    font-size: 0.82rem;
   }
 }

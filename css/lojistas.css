@@ -469,9 +469,10 @@
 }
 
 .contact-b2b-box h2 {
-  font-size: clamp(2.2rem, 3.8vw, 3rem);
+  font-size: clamp(1.6rem, 5vw, 3rem);
   font-weight: 800;
   color: #FFFFFF;
+  word-break: break-word;
 }
 
 .contact-b2b-box p {
@@ -509,6 +510,16 @@
     grid-template-columns: 1fr;
   }
   .contact-b2b-box {
-    padding: 40px 24px;
+    padding: 36px 20px;
+  }
+}
+
+@media (max-width: 480px) {
+  .contact-b2b-box {
+    padding: 28px 16px;
+    gap: 18px;
+  }
+  .contact-b2b-box p {
+    font-size: 0.95rem;
   }
 }
