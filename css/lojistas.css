@@ -1,0 +1,530 @@
+/* ==========================================================================
+   INFINITYTECH — LOJISTAS / REVENDEDORES (B2B /lojistas)
+   Identidade Visual Própria: Fundo Dark Tech, Azul Metálico e Vermelho
+   ========================================================================== */
+
+.lojistas-body {
+  background-color: #07131F !important;
+  color: #E2E8F0 !important;
+}
+
+.lojistas-body h1,
+.lojistas-body h2,
+.lojistas-body h3,
+.lojistas-body h4 {
+  color: #FFFFFF !important;
+}
+
+.lojistas-body p {
+  color: #94A3B8 !important;
+}
+
+/* Header Dark para Lojistas */
+.header-dark {
+  background: rgba(7, 19, 31, 0.88) !important;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.08) !important;
+}
+
+.header-dark.scrolled {
+  background: rgba(7, 19, 31, 0.98) !important;
+  box-shadow: 0 4px 25px rgba(0, 0, 0, 0.6) !important;
+}
+
+.header-dark .nav-link {
+  color: #CBD5E1 !important;
+}
+
+.header-dark .nav-link:hover {
+  color: #FFFFFF !important;
+}
+
+.header-dark .track-selector {
+  background: rgba(255, 255, 255, 0.06) !important;
+  border-color: rgba(255, 255, 255, 0.12) !important;
+}
+
+.header-dark .track-btn {
+  color: #94A3B8 !important;
+}
+
+/* Hero Section B2B (Dark Theme) */
+.hero-b2b {
+  padding: 170px 0 100px 0;
+  background: radial-gradient(circle at 70% 30%, rgba(27, 90, 160, 0.25) 0%, transparent 60%),
+              radial-gradient(circle at 10% 80%, rgba(196, 30, 46, 0.18) 0%, transparent 50%),
+              linear-gradient(180deg, #07131F 0%, #0B1E32 100%);
+  position: relative;
+  overflow: hidden;
+}
+
+.hero-b2b-grid {
+  display: grid;
+  grid-template-columns: 1.1fr 0.9fr;
+  gap: 60px;
+  align-items: center;
+  position: relative;
+  z-index: 2;
+}
+
+.hero-b2b-content {
+  display: flex;
+  flex-direction: column;
+  gap: 26px;
+}
+
+.hero-b2b-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 6px 16px;
+  border-radius: var(--radius-full);
+  background: rgba(196, 30, 46, 0.2);
+  border: 1px solid rgba(196, 30, 46, 0.45);
+  color: #FF8F9B;
+  font-family: var(--font-heading);
+  font-size: 0.82rem;
+  font-weight: 800;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  width: fit-content;
+}
+
+.hero-b2b-title {
+  font-size: clamp(2.4rem, 4.2vw, 3.6rem);
+  font-weight: 800;
+  color: #FFFFFF;
+  line-height: 1.15;
+}
+
+.hero-b2b-title .highlight-red {
+  color: var(--accent);
+}
+
+.hero-b2b-title .highlight-blue {
+  color: #60A5FA;
+}
+
+.hero-b2b-subtitle {
+  font-size: 1.15rem;
+  color: #94A3B8;
+  line-height: 1.65;
+  max-width: 580px;
+}
+
+.hero-b2b-media {
+  position: relative;
+}
+
+.hero-b2b-img-card {
+  border-radius: var(--radius-xl);
+  overflow: hidden;
+  box-shadow: 0 20px 50px rgba(0, 0, 0, 0.6);
+  border: 1px solid rgba(255, 255, 255, 0.15);
+  background: #0B1E32;
+  position: relative;
+  transition: transform var(--transition-smooth);
+}
+
+.hero-b2b-img-card:hover {
+  transform: scale(1.02);
+}
+
+.hero-b2b-img-card img {
+  width: 100%;
+  height: auto;
+  display: block;
+}
+
+/* ==========================================================================
+   POR QUE SER PARCEIRO (5 CARDS B2B)
+   ========================================================================== */
+.partner-section {
+  background: #07131F;
+  border-top: 1px solid rgba(255, 255, 255, 0.05);
+}
+
+.partner-grid {
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  gap: 20px;
+}
+
+.partner-card {
+  background: rgba(14, 41, 69, 0.4);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  border-radius: var(--radius-lg);
+  padding: 32px 22px;
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  transition: all var(--transition-normal);
+  position: relative;
+  overflow: hidden;
+}
+
+.partner-card::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 3px;
+  background: linear-gradient(90deg, var(--accent) 0%, var(--secondary) 100%);
+  opacity: 0;
+  transition: opacity var(--transition-fast);
+}
+
+.partner-card:hover {
+  transform: translateY(-6px);
+  background: rgba(14, 41, 69, 0.7);
+  border-color: rgba(255, 255, 255, 0.2);
+  box-shadow: 0 12px 30px rgba(0, 0, 0, 0.4);
+}
+
+.partner-card:hover::before {
+  opacity: 1;
+}
+
+.partner-icon {
+  width: 50px;
+  height: 50px;
+  border-radius: var(--radius-md);
+  background: rgba(196, 30, 46, 0.15);
+  color: var(--accent-hover);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.25rem;
+  transition: all var(--transition-fast);
+}
+
+.partner-card:hover .partner-icon {
+  background: var(--accent);
+  color: #FFFFFF;
+  transform: scale(1.08);
+}
+
+.partner-title {
+  font-size: 1.1rem;
+  font-weight: 700;
+  color: #FFFFFF;
+}
+
+.partner-text {
+  font-size: 0.88rem;
+  color: #94A3B8;
+  line-height: 1.5;
+}
+
+/* ==========================================================================
+   CATÁLOGO DE PRODUTOS / ATACADO (GRID DE CARDS COM FOTOS REAIS)
+   ========================================================================== */
+.catalog-section {
+  background: linear-gradient(180deg, #07131F 0%, #0B1E32 100%);
+}
+
+.catalog-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 32px;
+}
+
+.catalog-card {
+  background: rgba(11, 30, 50, 0.6);
+  backdrop-filter: blur(14px);
+  -webkit-backdrop-filter: blur(14px);
+  border: 1px solid rgba(255, 255, 255, 0.09);
+  border-radius: var(--radius-xl);
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  transition: all var(--transition-normal);
+}
+
+.catalog-card:hover {
+  transform: translateY(-8px);
+  border-color: rgba(96, 165, 250, 0.4);
+  box-shadow: 0 16px 40px rgba(0, 0, 0, 0.5);
+}
+
+.catalog-media {
+  position: relative;
+  width: 100%;
+  height: 300px;
+  background: #050E17;
+  overflow: hidden;
+}
+
+.catalog-media img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.6s ease;
+}
+
+.catalog-card:hover .catalog-media img {
+  transform: scale(1.06);
+}
+
+.catalog-badge-float {
+  position: absolute;
+  top: 16px;
+  right: 16px;
+  background: rgba(7, 19, 31, 0.85);
+  backdrop-filter: blur(8px);
+  border: 1px solid rgba(255, 255, 255, 0.15);
+  padding: 6px 12px;
+  border-radius: var(--radius-full);
+  font-size: 0.75rem;
+  font-weight: 700;
+  color: #60A5FA;
+  text-transform: uppercase;
+}
+
+.catalog-body {
+  padding: 28px 24px;
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  flex: 1;
+}
+
+.catalog-name {
+  font-size: 1.3rem;
+  font-weight: 800;
+  color: #FFFFFF;
+}
+
+.catalog-features {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  margin: 4px 0 12px 0;
+}
+
+.catalog-features li {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 0.88rem;
+  color: #CBD5E1;
+}
+
+.catalog-features svg {
+  color: var(--accent);
+  flex-shrink: 0;
+  width: 16px;
+  height: 16px;
+}
+
+.catalog-cta {
+  margin-top: auto;
+  width: 100%;
+}
+
+/* ==========================================================================
+   COMO FUNCIONA A PARCERIA (STEPPER B2B 5 PASSOS)
+   ========================================================================== */
+.partner-steps-grid {
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  gap: 20px;
+  position: relative;
+}
+
+.partner-step-card {
+  background: rgba(14, 41, 69, 0.45);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  border-radius: var(--radius-lg);
+  padding: 32px 20px 26px 20px;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 16px;
+  transition: all var(--transition-normal);
+  position: relative;
+  z-index: 2;
+}
+
+.partner-step-card::after {
+  content: '→';
+  position: absolute;
+  right: -16px;
+  top: 42px;
+  width: 24px;
+  height: 24px;
+  background: #0B1E32;
+  color: #60A5FA;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 0.85rem;
+  font-weight: 800;
+  border: 2px solid rgba(255, 255, 255, 0.15);
+  z-index: 3;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.5);
+}
+
+.partner-step-card:last-child::after {
+  display: none;
+}
+
+.partner-step-card:hover {
+  transform: translateY(-6px);
+  background: rgba(14, 41, 69, 0.75);
+  border-color: rgba(96, 165, 250, 0.4);
+  box-shadow: 0 12px 30px rgba(0, 0, 0, 0.4);
+}
+
+.partner-step-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+}
+
+.partner-step-num {
+  width: 44px;
+  height: 44px;
+  border-radius: 50%;
+  background: linear-gradient(135deg, var(--accent) 0%, #8A0E1A 100%);
+  color: #FFFFFF;
+  font-family: var(--font-heading);
+  font-weight: 800;
+  font-size: 1.1rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 4px 14px var(--accent-glow);
+  flex-shrink: 0;
+}
+
+.partner-step-icon {
+  width: 38px;
+  height: 38px;
+  border-radius: var(--radius-sm);
+  background: rgba(255, 255, 255, 0.05);
+  color: #60A5FA;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all var(--transition-fast);
+}
+
+.partner-step-card:hover .partner-step-icon {
+  background: rgba(196, 30, 46, 0.2);
+  color: #FF8F9B;
+  transform: scale(1.08);
+}
+
+.partner-step-title {
+  font-size: 1.05rem;
+  font-weight: 700;
+  color: #FFFFFF;
+  line-height: 1.35;
+}
+
+.partner-step-desc {
+  font-size: 0.88rem;
+  color: #94A3B8;
+  line-height: 1.55;
+}
+
+/* ==========================================================================
+   FAQ LOJISTAS (DARK ACCORDION)
+   ========================================================================== */
+.lojistas-body .faq-item {
+  background: rgba(11, 30, 50, 0.5) !important;
+  border-color: rgba(255, 255, 255, 0.08) !important;
+}
+
+.lojistas-body .faq-item:hover {
+  border-color: rgba(96, 165, 250, 0.3) !important;
+}
+
+.lojistas-body .faq-item.active {
+  border-color: var(--secondary) !important;
+  background: rgba(11, 30, 50, 0.8) !important;
+}
+
+.lojistas-body .faq-question {
+  color: #FFFFFF !important;
+}
+
+.lojistas-body .faq-answer {
+  color: #94A3B8 !important;
+}
+
+/* ==========================================================================
+   CONTATO FINAL B2B
+   ========================================================================== */
+.contact-section-b2b {
+  background: #040A12;
+  border-top: 1px solid rgba(255, 255, 255, 0.06);
+}
+
+.contact-b2b-box {
+  background: linear-gradient(135deg, rgba(14, 58, 99, 0.4) 0%, rgba(196, 30, 46, 0.25) 100%);
+  border: 1px solid rgba(255, 255, 255, 0.15);
+  border-radius: var(--radius-xl);
+  padding: 60px 48px;
+  text-align: center;
+  max-width: 900px;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 24px;
+  box-shadow: 0 20px 50px rgba(0,0,0,0.5);
+}
+
+.contact-b2b-box h2 {
+  font-size: clamp(2.2rem, 3.8vw, 3rem);
+  font-weight: 800;
+  color: #FFFFFF;
+}
+
+.contact-b2b-box p {
+  font-size: 1.15rem;
+  color: #CBD5E1;
+  max-width: 620px;
+}
+
+/* Responsividade B2B */
+@media (max-width: 1024px) {
+  .partner-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+  .catalog-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+  .partner-steps-grid {
+    grid-template-columns: 1fr;
+  }
+  .partner-step-card::after {
+    display: none;
+  }
+}
+
+@media (max-width: 768px) {
+  .hero-b2b {
+    padding: 120px 0 60px 0;
+  }
+  .hero-b2b-grid {
+    grid-template-columns: 1fr;
+    gap: 40px;
+  }
+  .partner-grid,
+  .catalog-grid {
+    grid-template-columns: 1fr;
+  }
+  .contact-b2b-box {
+    padding: 40px 24px;
+  }
+}

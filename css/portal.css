@@ -1,0 +1,388 @@
+/* ==========================================================================
+   INFINITYTECH — PORTAL SPLIT SCREEN ("/")
+   ========================================================================== */
+
+.portal-body {
+  margin: 0;
+  padding: 0;
+  min-height: 100vh;
+  background: #040D17;
+  overflow-x: hidden;
+  display: flex;
+  flex-direction: column;
+}
+
+/* Header Flutuante do Portal */
+.portal-header {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  z-index: 50;
+  padding: 24px 32px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  pointer-events: none;
+}
+
+.portal-brand {
+  pointer-events: auto;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 10px;
+  text-align: center;
+  background: rgba(7, 29, 51, 0.85);
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+  padding: 14px 32px;
+  border-radius: var(--radius-xl);
+  border: 1px solid rgba(255, 255, 255, 0.15);
+  box-shadow: 0 12px 36px rgba(0, 0, 0, 0.5);
+}
+
+.portal-brand img {
+  height: 48px;
+  width: auto;
+  object-fit: contain;
+}
+
+.portal-main-title {
+  font-family: var(--font-heading);
+  font-size: clamp(1.1rem, 2vw, 1.35rem);
+  font-weight: 800;
+  color: #FFFFFF;
+  letter-spacing: -0.01em;
+}
+
+/* Container Split Screen */
+.split-wrapper {
+  display: flex;
+  flex: 1;
+  min-height: 100vh;
+  width: 100%;
+  position: relative;
+  overflow: hidden;
+}
+
+/* Metades */
+.split-panel {
+  position: relative;
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  padding: 120px 48px 100px 48px;
+  text-decoration: none;
+  overflow: hidden;
+  transition: all 0.6s cubic-bezier(0.16, 1, 0.3, 1);
+  cursor: pointer;
+}
+
+/* Imagem de Fundo & Overlay */
+.split-bg {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-size: cover;
+  background-position: center;
+  transition: transform 0.8s cubic-bezier(0.16, 1, 0.3, 1), filter 0.6s ease;
+  filter: brightness(0.65) saturate(1.1);
+}
+
+.split-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 1;
+  transition: background 0.5s ease;
+}
+
+/* Lado Esquerdo: Cliente Final (B2C) */
+.split-b2c .split-overlay {
+  background: linear-gradient(
+    180deg,
+    rgba(14, 58, 99, 0.4) 0%,
+    rgba(7, 29, 51, 0.85) 60%,
+    rgba(4, 16, 29, 0.98) 100%
+  );
+}
+
+/* Lado Direito: Lojistas (B2B) */
+.split-b2b .split-overlay {
+  background: linear-gradient(
+    180deg,
+    rgba(196, 30, 46, 0.3) 0%,
+    rgba(10, 15, 24, 0.88) 60%,
+    rgba(4, 8, 14, 0.98) 100%
+  );
+}
+
+/* Hover Effects */
+.split-wrapper:hover .split-panel {
+  flex: 0.9;
+  opacity: 0.75;
+}
+
+.split-wrapper .split-panel:hover {
+  flex: 1.25;
+  opacity: 1;
+}
+
+.split-panel:hover .split-bg {
+  transform: scale(1.06);
+  filter: brightness(0.85) saturate(1.25);
+}
+
+.split-b2c:hover .split-overlay {
+  background: linear-gradient(
+    180deg,
+    rgba(27, 90, 160, 0.35) 0%,
+    rgba(14, 58, 99, 0.8) 55%,
+    rgba(7, 29, 51, 0.96) 100%
+  );
+}
+
+.split-b2b:hover .split-overlay {
+  background: linear-gradient(
+    180deg,
+    rgba(196, 30, 46, 0.4) 0%,
+    rgba(15, 23, 38, 0.82) 55%,
+    rgba(5, 10, 18, 0.96) 100%
+  );
+}
+
+/* Conteúdo interno da metade */
+.split-content {
+  position: relative;
+  z-index: 10;
+  max-width: 540px;
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  transform: translateY(0);
+  transition: transform 0.4s ease;
+}
+
+.split-panel:hover .split-content {
+  transform: translateY(-8px);
+}
+
+.split-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 6px 16px;
+  border-radius: var(--radius-full);
+  font-family: var(--font-heading);
+  font-size: 0.8rem;
+  font-weight: 800;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  width: fit-content;
+}
+
+.split-b2c .split-badge {
+  background: rgba(27, 90, 160, 0.35);
+  color: #7EC1FF;
+  border: 1px solid rgba(126, 193, 255, 0.3);
+}
+
+.split-b2b .split-badge {
+  background: rgba(196, 30, 46, 0.35);
+  color: #FF8F9B;
+  border: 1px solid rgba(255, 143, 155, 0.3);
+}
+
+.split-title {
+  font-size: clamp(2.2rem, 3.8vw, 3.2rem);
+  font-weight: 800;
+  color: #FFFFFF;
+  line-height: 1.1;
+  text-shadow: 0 4px 16px rgba(0, 0, 0, 0.6);
+}
+
+.split-desc {
+  font-size: 1.05rem;
+  color: #CBD5E1;
+  line-height: 1.6;
+}
+
+.split-highlights {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  margin: 6px 0 12px 0;
+}
+
+.split-pill {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  padding: 6px 12px;
+  border-radius: var(--radius-sm);
+  background: rgba(255, 255, 255, 0.08);
+  backdrop-filter: blur(10px);
+  font-size: 0.82rem;
+  color: #E2E8F0;
+  font-weight: 600;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.split-cta-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 12px;
+  padding: 16px 32px;
+  border-radius: var(--radius-md);
+  font-family: var(--font-heading);
+  font-weight: 800;
+  font-size: 1rem;
+  width: fit-content;
+  color: #FFFFFF;
+  text-decoration: none;
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.3);
+  transition: var(--transition-fast);
+}
+
+.split-b2c .split-cta-btn {
+  background: linear-gradient(135deg, var(--secondary) 0%, var(--primary-light) 100%);
+  border: 1px solid rgba(126, 193, 255, 0.3);
+}
+
+.split-b2b .split-cta-btn {
+  background: linear-gradient(135deg, var(--accent) 0%, #9B111F 100%);
+  border: 1px solid rgba(255, 143, 155, 0.3);
+}
+
+.split-cta-btn:hover {
+  transform: translateX(4px);
+}
+
+/* Divisor Central Glow */
+.split-divider {
+  position: absolute;
+  top: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 2px;
+  height: 100%;
+  background: linear-gradient(180deg, transparent 0%, rgba(255, 255, 255, 0.2) 20%, rgba(255, 255, 255, 0.3) 80%, transparent 100%);
+  z-index: 20;
+  pointer-events: none;
+}
+
+.split-center-badge {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  z-index: 30;
+  background: #071D33;
+  border: 2px solid rgba(255, 255, 255, 0.2);
+  width: 54px;
+  height: 54px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #FFFFFF;
+  font-family: var(--font-heading);
+  font-weight: 800;
+  font-size: 0.9rem;
+  box-shadow: 0 0 25px rgba(0,0,0,0.6);
+  pointer-events: none;
+}
+
+/* Barra Inferior com Atalhos de WhatsApp */
+.portal-bottom-bar {
+  background: rgba(4, 13, 23, 0.95);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  border-top: 1px solid rgba(255, 255, 255, 0.08);
+  padding: 18px 32px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 20px;
+  z-index: 40;
+}
+
+.portal-bottom-title {
+  color: #94A3B8;
+  font-size: 0.85rem;
+  font-weight: 600;
+}
+
+.portal-bottom-actions {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  flex-wrap: wrap;
+}
+
+.portal-wa-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  padding: 8px 16px;
+  border-radius: var(--radius-full);
+  background: rgba(37, 211, 102, 0.12);
+  border: 1px solid rgba(37, 211, 102, 0.25);
+  color: #FFFFFF;
+  font-size: 0.85rem;
+  font-weight: 700;
+  text-decoration: none;
+  transition: var(--transition-fast);
+}
+
+.portal-wa-link:hover {
+  background: var(--whatsapp-green);
+  color: #FFFFFF;
+  transform: translateY(-2px);
+  box-shadow: 0 6px 16px var(--whatsapp-glow);
+}
+
+.portal-wa-link svg {
+  width: 18px;
+  height: 18px;
+  color: var(--whatsapp-green);
+}
+
+.portal-wa-link:hover svg {
+  color: #FFFFFF;
+}
+
+/* Responsividade Portal */
+@media (max-width: 900px) {
+  .split-wrapper {
+    flex-direction: column;
+    min-height: auto;
+  }
+  .split-divider, .split-center-badge {
+    display: none;
+  }
+  .split-panel {
+    min-height: 55vh;
+    padding: 100px 24px 48px 24px;
+  }
+  .split-wrapper:hover .split-panel,
+  .split-wrapper .split-panel:hover {
+    flex: 1;
+    opacity: 1;
+  }
+  .portal-bottom-bar {
+    flex-direction: column;
+    text-align: center;
+    padding: 16px 20px;
+  }
+  .portal-bottom-actions {
+    justify-content: center;
+    width: 100%;
+  }
+}

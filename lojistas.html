@@ -1,0 +1,642 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>InfinityTech | Peças e Acessórios para Lojistas</title>
+  <meta name="description" content="Assistência técnica especializada para smartphones (Apple, Samsung, Xiaomi, Motorola, Realme) com diagnóstico gratuito, garantia e delivery. Também distribuímos peças e acessórios para lojistas." />
+  
+  <!-- Open Graph / SEO -->
+  <meta property="og:type" content="website" />
+  <meta property="og:title" content="InfinityTech | Peças e Acessórios para Lojistas" />
+  <meta property="og:description" content="Assistência técnica especializada para smartphones (Apple, Samsung, Xiaomi, Motorola, Realme) com diagnóstico gratuito, garantia e delivery. Também distribuímos peças e acessórios para lojistas." />
+  <meta property="og:image" content="img/A810D08A-1D13-46C1-A891-690AFF1C4EDA.PNG" />
+  
+  <!-- Favicon -->
+  <link rel="icon" type="image/png" href="img/A810D08A-1D13-46C1-A891-690AFF1C4EDA.PNG" />
+  
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=Sora:wght@400;600;700;800&display=swap" rel="stylesheet" />
+  
+  <!-- CSS -->
+  <link rel="stylesheet" href="css/main.css" />
+  <link rel="stylesheet" href="css/lojistas.css" />
+</head>
+<body class="lojistas-body">
+
+  <!-- ==========================================================================
+       HEADER FIXO LOJISTAS (DARK EDITION)
+       ========================================================================== -->
+  <header class="header header-dark">
+    <div class="container header-container">
+      <a href="index.html" class="logo-link" title="Voltar ao início">
+        <img src="img/A810D08A-1D13-46C1-A891-690AFF1C4EDA.PNG" alt="InfinityTech Logo" class="logo-img" />
+      </a>
+
+      <!-- Menu Principal -->
+      <nav>
+        <ul class="nav-menu">
+          <li><a href="#hero" class="nav-link">Início</a></li>
+          <li><a href="#parceiro" class="nav-link">Por Que Ser Parceiro</a></li>
+          <li><a href="#produtos" class="nav-link">Catálogo de Produtos</a></li>
+          <li><a href="#como-funciona" class="nav-link">Como Funciona</a></li>
+          <li><a href="#faq" class="nav-link">FAQ Lojistas</a></li>
+          <li><a href="#contato" class="nav-link">Contato</a></li>
+        </ul>
+      </nav>
+
+      <!-- Ações do Header -->
+      <div class="header-actions">
+        <!-- Seletor de Trilha -->
+        <div class="track-selector">
+          <a href="assistencia-tecnica.html" class="track-btn" title="Ir para Cliente Final">Cliente Final</a>
+          <span class="track-btn active-lojista">Sou Lojista ✓</span>
+        </div>
+
+        <!-- Botão CTA WhatsApp -->
+        <a href="https://wa.me/5567992683435?text=Ol%C3%A1%2C+sou+lojista+e+gostaria+de+solicitar+a+tabela+de+pre%C3%A7os." target="_blank" rel="noopener noreferrer" class="btn btn-whatsapp btn-sm">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.301-.15-1.78-.878-2.056-.978-.276-.1-.476-.15-.676.15-.2.3-.776.978-.952 1.178-.176.2-.352.226-.653.075-1.39-.696-2.584-1.89-3.28-3.28-.15-.301-.026-.477.075-.653.1-.176.3-.352.45-.552.15-.2.2-.351.3-.576.1-.226.05-.426-.025-.576-.075-.15-.676-1.63-.927-2.23-.244-.585-.494-.506-.676-.515-.175-.01-.376-.01-.576-.01-.2 0-.526.075-.802.376-.276.3-1.053 1.028-1.053 2.508s1.078 2.908 1.228 3.109c.15.2 2.12 3.238 5.137 4.542.717.31 1.277.497 1.713.636.72.228 1.375.196 1.894.118.578-.088 1.78-.727 2.03-1.43.25-.702.25-1.303.175-1.43-.075-.127-.275-.202-.576-.352zM12.04 2C6.52 2 2.04 6.48 2.04 12c0 1.98.58 3.82 1.58 5.38L2 22l4.78-1.56A9.957 9.957 0 0 0 12.04 22c5.52 0 10-4.48 10-10s-4.48-10-10-10z"/></svg>
+          <span>Fale no WhatsApp</span>
+        </a>
+
+        <!-- Botão Menu Mobile -->
+        <button class="mobile-toggle" style="color: #FFFFFF;" aria-label="Abrir Menu de Navegação">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><line x1="3" y1="12" x2="21" y2="12"></line><line x1="3" y1="6" x2="21" y2="6"></line><line x1="3" y1="18" x2="21" y2="18"></line></svg>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <!-- Menu Mobile Drawer -->
+  <div class="mobile-nav" style="background: rgba(7, 19, 31, 0.98); border-color: rgba(255,255,255,0.1);">
+    <div class="track-selector" style="margin-bottom: 12px; width: 100%; justify-content: center; background: rgba(255,255,255,0.06);">
+      <a href="assistencia-tecnica.html" class="track-btn" style="color: #94A3B8;">Cliente Final</a>
+      <span class="track-btn active-lojista">Sou Lojista ✓</span>
+    </div>
+    <ul class="mobile-nav-links">
+      <li><a href="#hero" style="color: #FFFFFF;">Início</a></li>
+      <li><a href="#parceiro" style="color: #FFFFFF;">Por Que Ser Parceiro</a></li>
+      <li><a href="#produtos" style="color: #FFFFFF;">Catálogo de Produtos</a></li>
+      <li><a href="#como-funciona" style="color: #FFFFFF;">Como Funciona</a></li>
+      <li><a href="#faq" style="color: #FFFFFF;">FAQ Lojistas</a></li>
+      <li><a href="#contato" style="color: #FFFFFF;">Contato</a></li>
+    </ul>
+    <a href="https://wa.me/5567992683435?text=Ol%C3%A1%2C+sou+lojista+e+gostaria+de+solicitar+a+tabela+de+pre%C3%A7os." target="_blank" rel="noopener noreferrer" class="btn btn-whatsapp btn-sm" style="width: 100%; margin-top: 10px;">
+      WhatsApp (67) 99268-3435
+    </a>
+  </div>
+
+  <!-- ==========================================================================
+       HERO SECTION (DARK B2B)
+       ========================================================================== -->
+  <section id="hero" class="hero-b2b">
+    <div class="container">
+      <div class="hero-b2b-grid">
+        
+        <!-- Conteúdo Hero Lojistas -->
+        <div class="hero-b2b-content reveal">
+          <span class="hero-b2b-badge">
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"></polygon></svg>
+            Distribuição B2B • Peças & Acessórios
+          </span>
+
+          <h1 class="hero-b2b-title">
+            Acessórios para Celular — <span class="highlight-red">Para Lojistas</span>
+          </h1>
+
+          <p class="hero-b2b-subtitle">
+            Qualidade premium, preço competitivo e entrega rápida para o seu negócio.
+          </p>
+
+          <div style="display: flex; gap: 16px; flex-wrap: wrap; margin-top: 8px;">
+            <a href="https://wa.me/5567992683435" target="_blank" rel="noopener noreferrer" class="btn btn-accent btn-lg">
+              <span>Seja nosso parceiro e aumente seus lucros</span>
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><line x1="5" y1="12" x2="19" y2="12"></line><polyline points="12 5 19 12 12 19"></polyline></svg>
+            </a>
+            <a href="#produtos" class="btn btn-outline btn-lg" style="color: #FFFFFF; border-color: rgba(255, 255, 255, 0.3);">
+              Ver Catálogo
+            </a>
+          </div>
+        </div>
+
+        <!-- Mídia Hero (Mockup Oficial de Acessórios de /img) -->
+        <div class="hero-b2b-media reveal reveal-delay-1">
+          <div class="hero-b2b-img-card">
+            <img src="img/74039C55-0831-45AA-883F-2694C43E98B1.PNG" alt="Acessórios para Celular InfinityTech para Lojistas" />
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ==========================================================================
+       POR QUE SER PARCEIRO (5 VANTAGENS / GRID DE 5 ITENS)
+       ========================================================================== -->
+  <section id="parceiro" class="section partner-section">
+    <div class="container">
+      <div class="section-title-wrap reveal">
+        <span class="section-tag tag-accent">Vantagens Exclusivas</span>
+        <h2 class="section-title">Por que ser parceiro</h2>
+        <p class="section-subtitle">Tudo o que sua loja precisa para vender mais, com mais margem e sem falta de estoque.</p>
+      </div>
+
+      <div class="partner-grid">
+        <!-- 1 -->
+        <div class="partner-card reveal">
+          <div class="partner-icon">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"></polygon></svg>
+          </div>
+          <h3 class="partner-title">Produtos de Qualidade</h3>
+          <p class="partner-text">padrão premium</p>
+        </div>
+
+        <!-- 2 -->
+        <div class="partner-card reveal reveal-delay-1">
+          <div class="partner-icon">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="12" y1="1" x2="12" y2="23"></line><path d="M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"></path></svg>
+          </div>
+          <h3 class="partner-title">Preços Competitivos</h3>
+          <p class="partner-text">mais lucro para você</p>
+        </div>
+
+        <!-- 3 -->
+        <div class="partner-card reveal reveal-delay-2">
+          <div class="partner-icon">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="1" y="3" width="15" height="13"></rect><polygon points="16 8 20 8 23 11 23 16 16 16 16 8"></polygon><circle cx="5.5" cy="18.5" r="2.5"></circle><circle cx="18.5" cy="18.5" r="2.5"></circle></svg>
+          </div>
+          <h3 class="partner-title">Entrega Rápida</h3>
+          <p class="partner-text">agilidade que seu negócio precisa</p>
+        </div>
+
+        <!-- 4 -->
+        <div class="partner-card reveal reveal-delay-3">
+          <div class="partner-icon">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 16V8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16z"></path><polyline points="3.27 6.96 12 12.01 20.73 6.96"></polyline><line x1="12" y1="22.08" x2="12" y2="12"></line></svg>
+          </div>
+          <h3 class="partner-title">Variedade que Vende</h3>
+          <p class="partner-text">tudo em um só lugar</p>
+        </div>
+
+        <!-- 5 -->
+        <div class="partner-card reveal reveal-delay-4">
+          <div class="partner-icon">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"></path><circle cx="9" cy="7" r="4"></circle><path d="M23 21v-2a4 4 0 0 0-3-3.87"></path><path d="M16 3.13a4 4 0 0 1 0 7.75"></path></svg>
+          </div>
+          <h3 class="partner-title">Parceria que Gera Lucro</h3>
+          <p class="partner-text">cresça junto com a InfinityTech</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ==========================================================================
+       CATÁLOGO DE PRODUTOS (COM FOTOS OFICIAIS DE /img)
+       ========================================================================== -->
+  <section id="produtos" class="section catalog-section">
+    <div class="container">
+      <div class="section-title-wrap reveal">
+        <span class="section-tag" style="background: rgba(96, 165, 250, 0.15); color: #93C5FD; border-color: rgba(96, 165, 250, 0.3);">
+          Linha de Produtos
+        </span>
+        <h2 class="section-title">Nossos Produtos</h2>
+        <p class="section-subtitle">Confira os produtos mais vendidos com pronta-entrega para sua loja ou bancada técnica.</p>
+      </div>
+
+      <div class="catalog-grid">
+        
+        <!-- 1. Película Protetora de Vidro -->
+        <div class="catalog-card reveal">
+          <div class="catalog-media">
+            <img src="img/95917700-6AC6-465A-A016-67A2A7127A83.PNG" alt="Película Protetora de Vidro InfinityTech" loading="lazy" decoding="async" />
+            <span class="catalog-badge-float">Alta Saída</span>
+          </div>
+          <div class="catalog-body">
+            <h3 class="catalog-name">Película Protetora de Vidro</h3>
+            <ul class="catalog-features">
+              <li>
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"></polyline></svg>
+                Proteção máxima contra riscos e impactos
+              </li>
+              <li>
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"></polyline></svg>
+                Alta definição e transparência
+              </li>
+            </ul>
+            <div class="catalog-cta">
+              <a href="https://wa.me/5567992683435" target="_blank" rel="noopener noreferrer" class="btn btn-whatsapp" style="width: 100%;">
+                Consultar disponibilidade
+              </a>
+            </div>
+          </div>
+        </div>
+
+        <!-- 2. Película de Hidrogel -->
+        <div class="catalog-card reveal reveal-delay-1">
+          <div class="catalog-media">
+            <img src="img/E40B950B-97CD-41CB-B811-6D0B75F4C81F.PNG" alt="Película de Hidrogel InfinityTech" loading="lazy" decoding="async" />
+            <span class="catalog-badge-float">Tendência</span>
+          </div>
+          <div class="catalog-body">
+            <h3 class="catalog-name">Película de Hidrogel</h3>
+            <ul class="catalog-features">
+              <li>
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"></polyline></svg>
+                Autorrecuperável
+              </li>
+              <li>
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"></polyline></svg>
+                Se adapta perfeitamente à tela
+              </li>
+            </ul>
+            <div class="catalog-cta">
+              <a href="https://wa.me/5567992683435" target="_blank" rel="noopener noreferrer" class="btn btn-whatsapp" style="width: 100%;">
+                Consultar disponibilidade
+              </a>
+            </div>
+          </div>
+        </div>
+
+        <!-- 3. Carregador Premium -->
+        <div class="catalog-card reveal reveal-delay-2">
+          <div class="catalog-media">
+            <img src="img/F4358CA6-B156-4834-A820-FC6804219379.PNG" alt="Carregador Premium InfinityTech" loading="lazy" decoding="async" />
+            <span class="catalog-badge-float">Top Vendas</span>
+          </div>
+          <div class="catalog-body">
+            <h3 class="catalog-name">Carregador Premium</h3>
+            <ul class="catalog-features">
+              <li>
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"></polyline></svg>
+                Carregamento rápido
+              </li>
+              <li>
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"></polyline></svg>
+                Alta durabilidade, segurança total
+              </li>
+            </ul>
+            <div class="catalog-cta">
+              <a href="https://wa.me/5567992683435" target="_blank" rel="noopener noreferrer" class="btn btn-whatsapp" style="width: 100%;">
+                Consultar disponibilidade
+              </a>
+            </div>
+          </div>
+        </div>
+
+        <!-- 4. Suporte Veicular para Carro -->
+        <div class="catalog-card reveal">
+          <div class="catalog-media">
+            <img src="img/E29162EF-4AE9-41D5-AC97-E2D8B642887A.PNG" alt="Suporte Veicular para Carro InfinityTech" loading="lazy" decoding="async" />
+            <span class="catalog-badge-float">Praticidade</span>
+          </div>
+          <div class="catalog-body">
+            <h3 class="catalog-name">Suporte Veicular para Carro</h3>
+            <ul class="catalog-features">
+              <li>
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"></polyline></svg>
+                Fixação segura
+              </li>
+              <li>
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"></polyline></svg>
+                Ajuste 360°
+              </li>
+            </ul>
+            <div class="catalog-cta">
+              <a href="https://wa.me/5567992683435" target="_blank" rel="noopener noreferrer" class="btn btn-whatsapp" style="width: 100%;">
+                Consultar disponibilidade
+              </a>
+            </div>
+          </div>
+        </div>
+
+        <!-- 5. Suporte Veicular para Moto -->
+        <div class="catalog-card reveal reveal-delay-1">
+          <div class="catalog-media">
+            <img src="img/DC91B8C5-EC26-40E2-B077-AF29CF7D50C2.PNG" alt="Suporte Veicular para Motos InfinityTech" loading="lazy" decoding="async" />
+            <span class="catalog-badge-float">Resistente</span>
+          </div>
+          <div class="catalog-body">
+            <h3 class="catalog-name">Suporte Veicular para Moto</h3>
+            <ul class="catalog-features">
+              <li>
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"></polyline></svg>
+                Resistente à chuva
+              </li>
+              <li>
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"></polyline></svg>
+                Reduz vibrações
+              </li>
+            </ul>
+            <div class="catalog-cta">
+              <a href="https://wa.me/5567992683435" target="_blank" rel="noopener noreferrer" class="btn btn-whatsapp" style="width: 100%;">
+                Consultar disponibilidade
+              </a>
+            </div>
+          </div>
+        </div>
+
+        <!-- 6. Capas, Cabos, Fones sem fio e Power Banks -->
+        <div class="catalog-card reveal reveal-delay-2">
+          <div class="catalog-media">
+            <img src="img/74039C55-0831-45AA-883F-2694C43E98B1.PNG" alt="Capas, Cabos, Fones sem fio e Power Banks InfinityTech" loading="lazy" decoding="async" />
+            <span class="catalog-badge-float">Mix Completo</span>
+          </div>
+          <div class="catalog-body">
+            <h3 class="catalog-name">Capas, Cabos, Fones sem fio e Power Banks</h3>
+            <ul class="catalog-features">
+              <li>
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"></polyline></svg>
+                Fones sem fio e Power Banks
+              </li>
+              <li>
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"></polyline></svg>
+                Capas reforçadas e cabos de alta velocidade
+              </li>
+            </ul>
+            <div class="catalog-cta">
+              <a href="https://wa.me/5567992683435" target="_blank" rel="noopener noreferrer" class="btn btn-whatsapp" style="width: 100%;">
+                Consultar disponibilidade
+              </a>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ==========================================================================
+       COMO FUNCIONA A PARCERIA (STEPPER 5 PASSOS)
+       ========================================================================== -->
+  <section id="como-funciona" class="section" style="background: #07131F;">
+    <div class="container">
+      <div class="section-title-wrap reveal">
+        <span class="section-tag tag-accent">Processo Comercial</span>
+        <h2 class="section-title">Como Funciona a Parceria</h2>
+        <p class="section-subtitle">Passo a passo descomplicado para você abastecer sua loja com agilidade.</p>
+      </div>
+
+      <div class="partner-steps-grid">
+        <!-- Passo 1 -->
+        <div class="partner-step-card reveal">
+          <div class="partner-step-header">
+            <div class="partner-step-num">1</div>
+            <div class="partner-step-icon">
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><path d="M21 11.5a8.38 8.38 0 0 1-.9 3.8 8.5 8.5 0 0 1-7.6 4.7 8.38 8.38 0 0 1-3.8-.9L3 21l1.9-5.7a8.38 8.38 0 0 1-.9-3.8 8.5 8.5 0 0 1 4.7-7.6 8.38 8.38 0 0 1 3.8-.9h.5a8.48 8.48 0 0 1 8 8v.5z"></path></svg>
+            </div>
+          </div>
+          <h3 class="partner-step-title">Contato WhatsApp</h3>
+          <p class="partner-step-desc">Fale com a gente pelo WhatsApp e conte sobre sua loja</p>
+        </div>
+
+        <!-- Passo 2 -->
+        <div class="partner-step-card reveal reveal-delay-1">
+          <div class="partner-step-header">
+            <div class="partner-step-num">2</div>
+            <div class="partner-step-icon">
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path><polyline points="14 2 14 8 20 8"></polyline><line x1="16" y1="13" x2="8" y2="13"></line><line x1="16" y1="17" x2="8" y2="17"></line><polyline points="10 9 9 9 8 9"></polyline></svg>
+            </div>
+          </div>
+          <h3 class="partner-step-title">Tabela & Catálogo</h3>
+          <p class="partner-step-desc">Receba a tabela de preços e catálogo completo</p>
+        </div>
+
+        <!-- Passo 3 -->
+        <div class="partner-step-card reveal reveal-delay-2">
+          <div class="partner-step-header">
+            <div class="partner-step-num">3</div>
+            <div class="partner-step-icon">
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><circle cx="9" cy="21" r="1"></circle><circle cx="20" cy="21" r="1"></circle><path d="M1 1h4l2.68 13.39a2 2 0 0 0 2 1.61h9.72a2 2 0 0 0 2-1.61L23 6H6"></path></svg>
+            </div>
+          </div>
+          <h3 class="partner-step-title">Faça seu Pedido</h3>
+          <p class="partner-step-desc">Faça seu pedido com condições especiais</p>
+        </div>
+
+        <!-- Passo 4 -->
+        <div class="partner-step-card reveal reveal-delay-3">
+          <div class="partner-step-header">
+            <div class="partner-step-num">4</div>
+            <div class="partner-step-icon">
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><rect x="1" y="3" width="15" height="13"></rect><polygon points="16 8 20 8 23 11 23 16 16 16 16 8"></polygon><circle cx="5.5" cy="18.5" r="2.5"></circle><circle cx="18.5" cy="18.5" r="2.5"></circle></svg>
+            </div>
+          </div>
+          <h3 class="partner-step-title">Entrega Ágil</h3>
+          <p class="partner-step-desc">Receba com entrega rápida</p>
+        </div>
+
+        <!-- Passo 5 -->
+        <div class="partner-step-card reveal reveal-delay-4">
+          <div class="partner-step-header">
+            <div class="partner-step-num">5</div>
+            <div class="partner-step-icon">
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><path d="M21.5 2v6h-6M21.34 15.57a10 10 0 1 1-.57-8.38l5.67-5.67"></path></svg>
+            </div>
+          </div>
+          <h3 class="partner-step-title">Reposição Fácil</h3>
+          <p class="partner-step-desc">Reponha o estoque sempre que precisar.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ==========================================================================
+       FAQ LOJISTAS (ACCORDION DARK)
+       ========================================================================== -->
+  <section id="faq" class="section" style="background: #0B1E32;">
+    <div class="container">
+      <div class="section-title-wrap reveal">
+        <span class="section-tag" style="background: rgba(196, 30, 46, 0.15); color: #FF8F9B; border-color: rgba(196, 30, 46, 0.3);">
+          Dúvidas Comerciais
+        </span>
+        <h2 class="section-title">Perguntas Frequentes de Lojistas</h2>
+        <p class="section-subtitle">Principais esclarecimentos sobre pedidos e fornecimento no atacado.</p>
+      </div>
+
+      <div class="faq-grid reveal">
+        <!-- Q1 -->
+        <div class="faq-item">
+          <button class="faq-question">
+            <span>Qual o pedido mínimo?</span>
+            <div class="faq-icon">
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="6 9 12 15 18 9"></polyline></svg>
+            </div>
+          </button>
+          <div class="faq-answer">
+            a definir.
+          </div>
+        </div>
+
+        <!-- Q2 -->
+        <div class="faq-item">
+          <button class="faq-question">
+            <span>Como funciona o frete/entrega?</span>
+            <div class="faq-icon">
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="6 9 12 15 18 9"></polyline></svg>
+            </div>
+          </button>
+          <div class="faq-answer">
+            Entrega rápida, condições a combinar conforme a região.
+          </div>
+        </div>
+
+        <!-- Q3 -->
+        <div class="faq-item">
+          <button class="faq-question">
+            <span>Emitem nota fiscal?</span>
+            <div class="faq-icon">
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="6 9 12 15 18 9"></polyline></svg>
+            </div>
+          </button>
+          <div class="faq-answer">
+            a definir.
+          </div>
+        </div>
+
+        <!-- Q4 -->
+        <div class="faq-item">
+          <button class="faq-question">
+            <span>Vocês têm tabela de preços fixa?</span>
+            <div class="faq-icon">
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="6 9 12 15 18 9"></polyline></svg>
+            </div>
+          </button>
+          <div class="faq-answer">
+            Fale no WhatsApp para receber a tabela atualizada.
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ==========================================================================
+       CONTATO FINAL B2B
+       ========================================================================== -->
+  <section id="contato" class="section contact-section-b2b">
+    <div class="container">
+      <div class="contact-b2b-box reveal">
+        <span class="hero-b2b-badge">Atendimento Comercial B2B</span>
+        <h2>Vamos fazer negócio?</h2>
+        <p>
+          Conecte sua loja ao distribuidor com os produtos mais procurados e as melhores margens de revenda da região.
+        </p>
+        <div>
+          <a href="https://wa.me/5567992683435" target="_blank" rel="noopener noreferrer" class="btn btn-whatsapp btn-lg">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.301-.15-1.78-.878-2.056-.978-.276-.1-.476-.15-.676.15-.2.3-.776.978-.952 1.178-.176.2-.352.226-.653.075-1.39-.696-2.584-1.89-3.28-3.28-.15-.301-.026-.477.075-.653.1-.176.3-.352.45-.552.15-.2.2-.351.3-.576.1-.226.05-.426-.025-.576-.075-.15-.676-1.63-.927-2.23-.244-.585-.494-.506-.676-.515-.175-.01-.376-.01-.576-.01-.2 0-.526.075-.802.376-.276.3-1.053 1.028-1.053 2.508s1.078 2.908 1.228 3.109c.15.2 2.12 3.238 5.137 4.542.717.31 1.277.497 1.713.636.72.228 1.375.196 1.894.118.578-.088 1.78-.727 2.03-1.43.25-.702.25-1.303.175-1.43-.075-.127-.275-.202-.576-.352zM12.04 2C6.52 2 2.04 6.48 2.04 12c0 1.98.58 3.82 1.58 5.38L2 22l4.78-1.56A9.957 9.957 0 0 0 12.04 22c5.52 0 10-4.48 10-10s-4.48-10-10-10z"/></svg>
+            <span>Fale no WhatsApp (67) 99268-3435</span>
+          </a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ==========================================================================
+       FOOTER COMPARTILHADO
+       ========================================================================== -->
+  <footer class="footer">
+    <div class="container">
+      <div class="footer-grid">
+        
+        <!-- Marca & Slogan -->
+        <div class="footer-brand">
+          <a href="index.html">
+            <img src="img/A810D08A-1D13-46C1-A891-690AFF1C4EDA.PNG" alt="InfinityTech Distribuidor de Peças de Celular" class="footer-logo" />
+          </a>
+          <div class="footer-slogan">Distribuidor de Peças de Celular</div>
+          <p class="footer-desc">
+            Distribuição de peças e acessórios no atacado e assistência técnica especializada com peças de qualidade e atendimento ágil.
+          </p>
+          <div class="footer-address-info" style="font-size: 0.85rem; color: #CBD5E1; display: flex; align-items: flex-start; gap: 8px; line-height: 1.4;">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#60A5FA" stroke-width="2.5" style="flex-shrink: 0; margin-top: 2px;"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"></path><circle cx="12" cy="10" r="3"></circle></svg>
+            <span>Av. Afonso Pena, 1753 - Centro<br />Campo Grande - MS, 79002-070</span>
+          </div>
+          <div class="footer-socials">
+            <a href="#" class="footer-social-link" title="Instagram InfinityTech" aria-label="Instagram">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="2" width="20" height="20" rx="5" ry="5"></rect><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"></path><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"></line></svg>
+            </a>
+            <a href="#" class="footer-social-link" title="Facebook InfinityTech" aria-label="Facebook">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"></path></svg>
+            </a>
+          </div>
+        </div>
+
+        <!-- Links Trilha Cliente Final -->
+        <div>
+          <h4 class="footer-heading">Assistência Técnica</h4>
+          <ul class="footer-links">
+            <li><a href="assistencia-tecnica.html#hero">Início</a></li>
+            <li><a href="assistencia-tecnica.html#diferenciais">Diferenciais</a></li>
+            <li><a href="assistencia-tecnica.html#servicos">Serviços</a></li>
+            <li><a href="assistencia-tecnica.html#marcas">Marcas Atendidas</a></li>
+            <li><a href="assistencia-tecnica.html#como-funciona">Como Funciona</a></li>
+            <li><a href="assistencia-tecnica.html#faq">FAQ</a></li>
+            <li><a href="assistencia-tecnica.html#contato">Contato</a></li>
+          </ul>
+        </div>
+
+        <!-- Links Trilha Lojistas -->
+        <div>
+          <h4 class="footer-heading">Sou Lojista</h4>
+          <ul class="footer-links">
+            <li><a href="lojistas.html#hero">Início Atacado</a></li>
+            <li><a href="lojistas.html#parceiro">Por Que Ser Parceiro</a></li>
+            <li><a href="lojistas.html#produtos">Catálogo de Produtos</a></li>
+            <li><a href="lojistas.html#como-funciona">Como Funciona</a></li>
+            <li><a href="lojistas.html#faq">FAQ Lojistas</a></li>
+            <li><a href="lojistas.html#contato">Contato Comercial</a></li>
+          </ul>
+        </div>
+
+        <!-- Contatos WhatsApp Compartilhados -->
+        <div>
+          <h4 class="footer-heading">Canais de Atendimento</h4>
+          <div class="footer-contacts">
+            <a href="https://wa.me/5567993332306" target="_blank" rel="noopener noreferrer" class="footer-contact-card">
+              <div class="footer-contact-icon">
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.301-.15-1.78-.878-2.056-.978-.276-.1-.476-.15-.676.15-.2.3-.776.978-.952 1.178-.176.2-.352.226-.653.075-1.39-.696-2.584-1.89-3.28-3.28-.15-.301-.026-.477.075-.653.1-.176.3-.352.45-.552.15-.2.2-.351.3-.576.1-.226.05-.426-.025-.576-.075-.15-.676-1.63-.927-2.23-.244-.585-.494-.506-.676-.515-.175-.01-.376-.01-.576-.01-.2 0-.526.075-.802.376-.276.3-1.053 1.028-1.053 2.508s1.078 2.908 1.228 3.109c.15.2 2.12 3.238 5.137 4.542.717.31 1.277.497 1.713.636.72.228 1.375.196 1.894.118.578-.088 1.78-.727 2.03-1.43.25-.702.25-1.303.175-1.43-.075-.127-.275-.202-.576-.352zM12.04 2C6.52 2 2.04 6.48 2.04 12c0 1.98.58 3.82 1.58 5.38L2 22l4.78-1.56A9.957 9.957 0 0 0 12.04 22c5.52 0 10-4.48 10-10s-4.48-10-10-10z"/></svg>
+              </div>
+              <div class="footer-contact-info">
+                <span class="footer-contact-title">Assistência Técnica</span>
+                <span class="footer-contact-phone">(67) 99333-2306</span>
+              </div>
+            </a>
+
+            <a href="https://wa.me/5567992683435" target="_blank" rel="noopener noreferrer" class="footer-contact-card">
+              <div class="footer-contact-icon">
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.301-.15-1.78-.878-2.056-.978-.276-.1-.476-.15-.676.15-.2.3-.776.978-.952 1.178-.176.2-.352.226-.653.075-1.39-.696-2.584-1.89-3.28-3.28-.15-.301-.026-.477.075-.653.1-.176.3-.352.45-.552.15-.2.2-.351.3-.576.1-.226.05-.426-.025-.576-.075-.15-.676-1.63-.927-2.23-.244-.585-.494-.506-.676-.515-.175-.01-.376-.01-.576-.01-.2 0-.526.075-.802.376-.276.3-1.053 1.028-1.053 2.508s1.078 2.908 1.228 3.109c.15.2 2.12 3.238 5.137 4.542.717.31 1.277.497 1.713.636.72.228 1.375.196 1.894.118.578-.088 1.78-.727 2.03-1.43.25-.702.25-1.303.175-1.43-.075-.127-.275-.202-.576-.352zM12.04 2C6.52 2 2.04 6.48 2.04 12c0 1.98.58 3.82 1.58 5.38L2 22l4.78-1.56A9.957 9.957 0 0 0 12.04 22c5.52 0 10-4.48 10-10s-4.48-10-10-10z"/></svg>
+              </div>
+              <div class="footer-contact-info">
+                <span class="footer-contact-title">Lojistas / Atacado</span>
+                <span class="footer-contact-phone">(67) 99268-3435</span>
+              </div>
+            </a>
+          </div>
+        </div>
+
+      </div>
+
+      <!-- Rodapé Inferior -->
+      <div class="footer-bottom">
+        <div>
+          © InfinityTech — Todos os direitos reservados
+        </div>
+        <div>
+          Parceria comercial sólida e rentável para o seu negócio.
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <!-- ==========================================================================
+       BOTÃO FLUTUANTE DE WHATSAPP (LOJISTAS)
+       ========================================================================== -->
+  <a href="https://wa.me/5567992683435?text=Ol%C3%A1%2C+sou+lojista+e+gostaria+de+informa%C3%A7%C3%B5es+sobre+compras+no+atacado." target="_blank" rel="noopener noreferrer" class="floating-whatsapp" title="Fale com o Atacado para Lojistas">
+    <svg viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.301-.15-1.78-.878-2.056-.978-.276-.1-.476-.15-.676.15-.2.3-.776.978-.952 1.178-.176.2-.352.226-.653.075-1.39-.696-2.584-1.89-3.28-3.28-.15-.301-.026-.477.075-.653.1-.176.3-.352.45-.552.15-.2.2-.351.3-.576.1-.226.05-.426-.025-.576-.075-.15-.676-1.63-.927-2.23-.244-.585-.494-.506-.676-.515-.175-.01-.376-.01-.576-.01-.2 0-.526.075-.802.376-.276.3-1.053 1.028-1.053 2.508s1.078 2.908 1.228 3.109c.15.2 2.12 3.238 5.137 4.542.717.31 1.277.497 1.713.636.72.228 1.375.196 1.894.118.578-.088 1.78-.727 2.03-1.43.25-.702.25-1.303.175-1.43-.075-.127-.275-.202-.576-.352zM12.04 2C6.52 2 2.04 6.48 2.04 12c0 1.98.58 3.82 1.58 5.38L2 22l4.78-1.56A9.957 9.957 0 0 0 12.04 22c5.52 0 10-4.48 10-10s-4.48-10-10-10z"/></svg>
+    <span>Fale no WhatsApp</span>
+  </a>
+
+  <script src="js/main.js"></script>
+</body>
+</html>
