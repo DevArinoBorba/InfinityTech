@@ -60,6 +60,31 @@
   padding: 0;
 }
 
+/* Custom Scrollbar */
+::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: #040D17;
+}
+
+::-webkit-scrollbar-thumb {
+  background: rgba(27, 90, 160, 0.4);
+  border-radius: var(--radius-full);
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: rgba(27, 90, 160, 0.7);
+}
+
+/* Seleção de Texto Personalizada */
+::selection {
+  background: rgba(27, 90, 160, 0.35);
+  color: #FFFFFF;
+}
+
 html {
   scroll-behavior: smooth;
   font-size: 16px;
@@ -74,6 +99,7 @@ body {
   line-height: 1.6;
   overflow-x: hidden;
   min-height: 100vh;
+  caret-color: var(--secondary);
 }
 
 /* Tipografia */
@@ -776,8 +802,8 @@ img {
    ========================================================================== */
 .floating-whatsapp {
   position: fixed;
-  bottom: 28px;
-  right: 28px;
+  bottom: max(24px, env(safe-area-inset-bottom));
+  right: max(24px, env(safe-area-inset-right));
   z-index: 990;
   display: flex;
   align-items: center;
@@ -866,7 +892,27 @@ img {
   }
   .floating-whatsapp {
     padding: 14px;
-    bottom: 20px;
-    right: 20px;
+    bottom: max(20px, env(safe-area-inset-bottom));
+    right: max(20px, env(safe-area-inset-right));
+  }
+}
+
+/* ==========================================================================
+   ACESSIBILIDADE: PREFERS-REDUCED-MOTION
+   ========================================================================== */
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+  .floating-whatsapp {
+    animation: none !important;
+  }
+  .reveal {
+    opacity: 1 !important;
+    transform: none !important;
+    transition: none !important;
   }
 }

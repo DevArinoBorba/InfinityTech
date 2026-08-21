@@ -21,6 +21,11 @@ document.addEventListener('DOMContentLoaded', () => {
   faqItems.forEach(item => {
     const questionBtn = item.querySelector('.faq-question');
     if (questionBtn) {
+      // Garantir estado inicial acessível
+      if (!questionBtn.hasAttribute('aria-expanded')) {
+        questionBtn.setAttribute('aria-expanded', item.classList.contains('active') ? 'true' : 'false');
+      }
+
       questionBtn.addEventListener('click', () => {
         const isOpen = item.classList.contains('active');
         
@@ -28,14 +33,18 @@ document.addEventListener('DOMContentLoaded', () => {
         faqItems.forEach(otherItem => {
           if (otherItem !== item) {
             otherItem.classList.remove('active');
+            const otherBtn = otherItem.querySelector('.faq-question');
+            if (otherBtn) otherBtn.setAttribute('aria-expanded', 'false');
           }
         });
 
         // Alternar o atual
         if (!isOpen) {
           item.classList.add('active');
+          questionBtn.setAttribute('aria-expanded', 'true');
         } else {
           item.classList.remove('active');
+          questionBtn.setAttribute('aria-expanded', 'false');
         }
       });
     }
