@@ -239,6 +239,10 @@
   border-radius: var(--radius-xl);
 }
 
+.catalog-state[hidden] {
+  display: none;
+}
+
 [data-theme="light"] .catalog-state {
   color: var(--text-muted);
   background: #FFFFFF;
@@ -495,6 +499,10 @@
   box-shadow: var(--shadow-md);
 }
 
+.cart-badge[hidden] {
+  display: none;
+}
+
 .cart-badge {
   position: absolute;
   top: -6px;
@@ -740,6 +748,10 @@
   padding: 60px 24px;
   text-align: center;
   color: #64748B;
+}
+
+.cart-empty[hidden] {
+  display: none;
 }
 
 .cart-empty svg {
