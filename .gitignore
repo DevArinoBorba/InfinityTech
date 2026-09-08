@@ -1,0 +1,6 @@
+# Ignorar arquivos de documentacao markdown
+*.md
+
+# Ignorar configuracoes e dados do Impeccable
+.impeccable/
+.impeccable*
