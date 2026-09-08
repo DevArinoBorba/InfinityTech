@@ -125,9 +125,12 @@ function initThemeToggle() {
                          window.location.href.includes('lojistas');
   const defaultTheme = isLojistasPage ? 'dark' : 'light';
 
-  // Lê preferência do localStorage ou usa o padrão da página
+  // Lê preferência do localStorage, respeita o tema já aplicado pelo script
+  // anti-FOUC inline de cada página e só cai no padrão por nome de rota
+  // como último recurso (necessário para páginas fora do padrão lojistas*).
   const savedTheme = localStorage.getItem(THEME_STORAGE_KEY);
-  const currentTheme = savedTheme || defaultTheme;
+  const inlineTheme = document.documentElement.getAttribute('data-theme');
+  const currentTheme = savedTheme || inlineTheme || defaultTheme;
 
   // Garante aplicação no html
   document.documentElement.setAttribute('data-theme', currentTheme);
