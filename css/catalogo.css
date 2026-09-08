@@ -461,6 +461,10 @@
   white-space: nowrap;
 }
 
+.product-add-icon {
+  flex-shrink: 0;
+}
+
 .product-add.is-added {
   background: linear-gradient(135deg, var(--whatsapp-green) 0%, var(--whatsapp-hover) 100%) !important;
 }
@@ -822,6 +826,23 @@
   }
   .product-body {
     padding: 12px;
+  }
+  .product-actions {
+    gap: 8px;
+  }
+  .qty-stepper {
+    flex: 1;
+    justify-content: space-between;
+  }
+  .product-add-label {
+    display: none;
+  }
+  .product-add {
+    flex: 0 0 auto;
+    width: 40px;
+    height: 40px;
+    padding: 0;
+    gap: 0;
   }
   .cart-drawer {
     width: 100vw;

@@ -358,7 +358,10 @@
               <span class="qty-value">1</span>
               <button type="button" class="qty-btn qty-plus" aria-label="Aumentar quantidade">+</button>
             </div>
-            <button type="button" class="btn btn-accent btn-sm product-add">Adicionar</button>
+            <button type="button" class="btn btn-accent btn-sm product-add" aria-label="Adicionar ao carrinho" title="Adicionar ao carrinho">
+              <svg class="product-add-icon" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.3" stroke-linecap="round" stroke-linejoin="round"><circle cx="9" cy="21" r="1"></circle><circle cx="20" cy="21" r="1"></circle><path d="M1 1h4l2.68 13.39a2 2 0 0 0 2 1.61h9.72a2 2 0 0 0 2-1.61L23 6H6"></path></svg>
+              <span class="product-add-label">Adicionar</span>
+            </button>
           </div>
         </div>
       </article>
@@ -426,11 +429,12 @@
         stepper.dataset.qty = 1;
         qtyValue.textContent = 1;
 
-        const originalText = addBtn.textContent;
-        addBtn.textContent = 'Adicionado ✓';
+        const addLabel = addBtn.querySelector('.product-add-label');
+        const originalText = addLabel.textContent;
+        addLabel.textContent = 'Adicionado ✓';
         addBtn.classList.add('is-added');
         window.setTimeout(() => {
-          addBtn.textContent = originalText;
+          addLabel.textContent = originalText;
           addBtn.classList.remove('is-added');
         }, 1200);
       });
