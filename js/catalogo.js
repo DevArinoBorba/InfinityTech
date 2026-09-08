@@ -584,8 +584,19 @@
       <p>Carregando catálogo...</p>
     `);
 
+    // O Google Sheets pode demorar alguns segundos pra gerar o CSV de um
+    // catálogo grande — depois de um tempo, avisamos que ainda está em
+    // andamento em vez de deixar parecer travado.
+    const slowLoadNotice = window.setTimeout(() => {
+      setState('loading', `
+        <span class="catalog-spinner" aria-hidden="true"></span>
+        <p>Ainda carregando... catálogos grandes podem levar alguns segundos na primeira vez.</p>
+      `);
+    }, 4000);
+
     try {
       const csvText = await fetchCSV(CSV_URL);
+      window.clearTimeout(slowLoadNotice);
       const rows = parseCSV(csvText);
       state.products = rowsToProducts(rows);
       state.productsById = new Map(state.products.map((p) => [p.id, p]));
@@ -608,6 +619,7 @@
       renderCategoryFilters();
       renderGrid();
     } catch (err) {
+      window.clearTimeout(slowLoadNotice);
       setState('error', `
         <svg width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><circle cx="12" cy="12" r="10"></circle><line x1="12" y1="8" x2="12" y2="12"></line><line x1="12" y1="16" x2="12.01" y2="16"></line></svg>
         <p><strong>Não foi possível carregar o catálogo agora.</strong><br />Verifique sua conexão ou fale com nosso time comercial para a tabela atual.</p>
