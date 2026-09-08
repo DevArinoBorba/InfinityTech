@@ -4,47 +4,54 @@
    ========================================================================== */
 
 .lojistas-body {
-  background-color: #07131F !important;
-  color: #E2E8F0 !important;
+  background-color: #07131F;
+  color: #E2E8F0;
 }
 
 .lojistas-body h1,
 .lojistas-body h2,
 .lojistas-body h3,
 .lojistas-body h4 {
-  color: #FFFFFF !important;
+  color: #FFFFFF;
 }
 
 .lojistas-body p {
-  color: #94A3B8 !important;
+  color: #94A3B8;
 }
 
 /* Header Dark para Lojistas */
 .header-dark {
-  background: rgba(7, 19, 31, 0.88) !important;
-  border-bottom: 1px solid rgba(255, 255, 255, 0.08) !important;
+  background: rgba(7, 19, 31, 0.88);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.08);
 }
 
 .header-dark.scrolled {
-  background: rgba(7, 19, 31, 0.98) !important;
-  box-shadow: 0 4px 25px rgba(0, 0, 0, 0.6) !important;
+  background: rgba(7, 19, 31, 0.98);
+  box-shadow: 0 4px 25px rgba(0, 0, 0, 0.6);
 }
 
 .header-dark .nav-link {
-  color: #CBD5E1 !important;
+  color: #CBD5E1;
 }
 
 .header-dark .nav-link:hover {
-  color: #FFFFFF !important;
+  color: #FFFFFF;
 }
 
 .header-dark .track-selector {
-  background: rgba(255, 255, 255, 0.06) !important;
-  border-color: rgba(255, 255, 255, 0.12) !important;
+  background: rgba(255, 255, 255, 0.06);
+  border-color: rgba(255, 255, 255, 0.12);
 }
 
 .header-dark .track-btn {
-  color: #94A3B8 !important;
+  color: #94A3B8;
+}
+
+.header-dark .track-btn.active,
+.header-dark .track-btn.active-lojista {
+  background: linear-gradient(135deg, var(--accent) 0%, #A51422 100%);
+  color: #FFFFFF !important;
+  box-shadow: 0 2px 8px var(--accent-glow);
 }
 
 /* Hero Section B2B (Dark Theme) */
@@ -98,10 +105,6 @@
 
 .hero-b2b-title .highlight-red {
   color: var(--accent);
-}
-
-.hero-b2b-title .highlight-blue {
-  color: #60A5FA;
 }
 
 .hero-b2b-subtitle {
@@ -424,25 +427,25 @@
    FAQ LOJISTAS (DARK ACCORDION)
    ========================================================================== */
 .lojistas-body .faq-item {
-  background: rgba(11, 30, 50, 0.5) !important;
-  border-color: rgba(255, 255, 255, 0.08) !important;
+  background: rgba(11, 30, 50, 0.5);
+  border-color: rgba(255, 255, 255, 0.08);
 }
 
 .lojistas-body .faq-item:hover {
-  border-color: rgba(96, 165, 250, 0.3) !important;
+  border-color: rgba(96, 165, 250, 0.3);
 }
 
 .lojistas-body .faq-item.active {
-  border-color: var(--secondary) !important;
-  background: rgba(11, 30, 50, 0.8) !important;
+  border-color: var(--secondary);
+  background: rgba(11, 30, 50, 0.8);
 }
 
 .lojistas-body .faq-question {
-  color: #FFFFFF !important;
+  color: #FFFFFF;
 }
 
 .lojistas-body .faq-answer {
-  color: #94A3B8 !important;
+  color: #94A3B8;
 }
 
 /* ==========================================================================
@@ -522,4 +525,217 @@
   .contact-b2b-box p {
     font-size: 0.95rem;
   }
+}
+
+/* ==========================================================================
+   TEMA CLARO — LOJISTAS (B2B LIGHT MODE)
+   ========================================================================== */
+[data-theme="light"] .lojistas-body {
+  background-color: #F8FAFC;
+  color: #334155;
+}
+
+[data-theme="light"] .lojistas-body h1,
+[data-theme="light"] .lojistas-body h2,
+[data-theme="light"] .lojistas-body h3,
+[data-theme="light"] .lojistas-body h4,
+[data-theme="light"] .section-title,
+[data-theme="light"] .catalog-name,
+[data-theme="light"] .partner-title,
+[data-theme="light"] .partner-step-title {
+  color: #0E3A63;
+}
+
+[data-theme="light"] .lojistas-body p,
+[data-theme="light"] .section-subtitle,
+[data-theme="light"] .partner-text,
+[data-theme="light"] .partner-step-desc {
+  color: #64748B;
+}
+
+[data-theme="light"] .header-dark {
+  background: rgba(255, 255, 255, 0.88);
+  border-bottom: 1px solid rgba(14, 58, 99, 0.08);
+}
+
+[data-theme="light"] .header-dark.scrolled {
+  background: rgba(255, 255, 255, 0.98);
+  box-shadow: 0 4px 20px rgba(14, 58, 99, 0.08);
+}
+
+[data-theme="light"] .header-dark .nav-link {
+  color: #111A24;
+}
+
+[data-theme="light"] .header-dark .nav-link:hover {
+  color: #0E3A63;
+}
+
+[data-theme="light"] .header-dark .track-selector {
+  background: rgba(14, 58, 99, 0.06);
+  border-color: rgba(14, 58, 99, 0.12);
+}
+
+[data-theme="light"] .header-dark .track-btn {
+  color: #5A697A;
+}
+
+[data-theme="light"] .header-dark .track-btn:hover {
+  color: #0E3A63;
+}
+
+[data-theme="light"] .header-dark .track-btn.active,
+[data-theme="light"] .header-dark .track-btn.active-lojista {
+  background: linear-gradient(135deg, #0E3A63 0%, #1B5AA0 100%);
+  color: #FFFFFF !important;
+  box-shadow: 0 2px 8px rgba(14, 58, 99, 0.28);
+}
+
+[data-theme="light"] .header-dark .mobile-toggle {
+  color: #0E3A63;
+}
+
+[data-theme="light"] .hero-b2b {
+  background: radial-gradient(circle at 75% 25%, rgba(27, 90, 160, 0.12) 0%, transparent 60%),
+              radial-gradient(circle at 10% 75%, rgba(196, 30, 46, 0.08) 0%, transparent 50%),
+              linear-gradient(180deg, #F0F4F8 0%, #FFFFFF 100%);
+}
+
+[data-theme="light"] .hero-b2b-title {
+  color: var(--primary-dark);
+}
+
+[data-theme="light"] .hero-b2b-subtitle {
+  color: var(--text-muted);
+}
+
+[data-theme="light"] .hero-b2b-badge {
+  background: rgba(14, 58, 99, 0.06);
+  border-color: rgba(14, 58, 99, 0.15);
+  color: #0E3A63;
+}
+
+[data-theme="light"] .partner-card {
+  background: #FFFFFF;
+  border-color: rgba(14, 58, 99, 0.1);
+  box-shadow: 0 8px 24px rgba(14, 58, 99, 0.06);
+}
+
+[data-theme="light"] .partner-card:hover {
+  background: #FFFFFF;
+  border-color: var(--secondary);
+  box-shadow: 0 16px 40px rgba(14, 58, 99, 0.12);
+}
+
+[data-theme="light"] .catalog-section {
+  background: linear-gradient(180deg, #F1F5F9 0%, #F8FAFC 100%);
+}
+
+[data-theme="light"] .catalog-card {
+  background: #FFFFFF;
+  border-color: rgba(14, 58, 99, 0.1);
+  box-shadow: 0 8px 24px rgba(14, 58, 99, 0.06);
+}
+
+[data-theme="light"] .catalog-card:hover {
+  border-color: var(--secondary);
+  box-shadow: 0 16px 40px rgba(14, 58, 99, 0.12);
+}
+
+[data-theme="light"] .catalog-name {
+  color: var(--primary-dark);
+}
+
+[data-theme="light"] .partner-title {
+  color: var(--primary-dark);
+}
+
+[data-theme="light"] .partner-step-title {
+  color: var(--primary-dark);
+}
+
+[data-theme="light"] .catalog-features li {
+  color: #475569;
+}
+
+[data-theme="light"] .catalog-badge-float {
+  background: rgba(255, 255, 255, 0.9);
+  border-color: rgba(14, 58, 99, 0.15);
+  color: var(--secondary);
+}
+
+[data-theme="light"] .partner-step-card {
+  background: #FFFFFF;
+  border-color: rgba(14, 58, 99, 0.1);
+  box-shadow: 0 8px 24px rgba(14, 58, 99, 0.06);
+}
+
+[data-theme="light"] .partner-step-card::after {
+  background: #FFFFFF;
+  border-color: rgba(14, 58, 99, 0.2);
+  color: var(--secondary);
+  box-shadow: 0 2px 8px rgba(14, 58, 99, 0.15);
+}
+
+[data-theme="light"] .partner-step-card:hover {
+  background: #FFFFFF;
+  border-color: var(--secondary);
+  box-shadow: 0 16px 40px rgba(14, 58, 99, 0.12);
+}
+
+[data-theme="light"] .partner-step-icon {
+  background: rgba(14, 58, 99, 0.06);
+  color: var(--secondary);
+}
+
+[data-theme="light"] .lojistas-body .faq-item {
+  background: #FFFFFF;
+  border-color: rgba(14, 58, 99, 0.1);
+}
+
+[data-theme="light"] .lojistas-body .faq-item:hover {
+  border-color: var(--secondary);
+}
+
+[data-theme="light"] .lojistas-body .faq-item.active {
+  border-color: var(--secondary);
+  background: #FFFFFF;
+}
+
+[data-theme="light"] .lojistas-body .faq-question {
+  color: #0E3A63;
+}
+
+[data-theme="light"] .lojistas-body .faq-answer {
+  color: #64748B;
+}
+
+[data-theme="light"] .partner-section {
+  background: #F1F5F9;
+  border-top-color: rgba(14, 58, 99, 0.08);
+}
+
+[data-theme="light"] .contact-section-b2b {
+  background: radial-gradient(circle at 50% 40%, rgba(27, 90, 160, 0.06) 0%, transparent 65%), #F1F5F9;
+  border-top-color: rgba(14, 58, 99, 0.08);
+}
+
+[data-theme="light"] .contact-b2b-box {
+  background: linear-gradient(180deg, #FFFFFF 0%, #F8FAFC 100%);
+  border: 1px solid rgba(27, 90, 160, 0.16);
+  box-shadow: 0 24px 60px rgba(14, 58, 99, 0.1), 0 4px 16px rgba(14, 58, 99, 0.04);
+}
+
+[data-theme="light"] .contact-b2b-box .hero-b2b-badge {
+  background: rgba(27, 90, 160, 0.08);
+  border: 1px solid rgba(27, 90, 160, 0.22);
+  color: var(--secondary);
+}
+
+[data-theme="light"] .contact-b2b-box h2 {
+  color: var(--primary-dark);
+}
+
+[data-theme="light"] .contact-b2b-box p {
+  color: #475569;
 }

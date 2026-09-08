@@ -9,13 +9,13 @@ web
 ## Users
 
 1. **Consumidor Final (B2C):** Proprietários de smartphones (Apple iPhone, Samsung Galaxy, Xiaomi, Motorola, Realme) em Campo Grande - MS com telas quebradas, baterias viciadas, falhas de software ou danos líquidos precisando de reparo urgente, transparente e com garantia.
-2. **Lojistas e Técnicos de Reparo (B2B):** Donos de assistência técnica, revendedores de acessórios e lojistas de celular de Campo Grande e região que necessitam de reposição rápida e recorrente de peças, películas e acessórios no atacado com margem competitiva e suporte direto via WhatsApp.
+2. **Lojistas e Técnicos de Reparo (B2B):** Donos de assistência técnica, bancadas de manutenção e revendedores de peças de smartphone de Campo Grande e região que necessitam de reposição rápida e garantida de displays, baterias, módulos de câmera, conectores de carga e insumos com preço de distribuidora e atendimento direto via WhatsApp.
 
 ## Product Purpose
 
 Oferecer um portal web de alta conversão e presença digital para a **InfinityTech**, centralizando em uma única estrutura duas operações distintas e complementares:
 - Atendimento direto ao cliente final para conserto de celular com diagnóstico gratuito e delivery leva-e-traz.
-- Distribuição de peças e acessórios no atacado para revendedores e assistências parceiras.
+- Distribuição de peças e componentes para reparo no atacado para oficinas, técnicos e lojistas parceiros.
 
 ## Positioning
 
@@ -49,8 +49,11 @@ A InfinityTech se diferencia por combinar estoque real a pronta-entrega em Campo
 
 - Catálogo de imagens reais da operação em `/img`:
   - `img/logo.png` (Logomarca oficial)
+  - `img/assistecnica.jpeg` (Assistência técnica hero)
+  - `img/trocadetela.jpeg` (Destaque Troca de Tela em até 2 horas)
+  - `img/brand-apple.svg`, `img/brand-android.svg`, `img/brand-samsung.svg`, `img/brand-xiaomi.svg`, `img/brand-motorola.svg`, `img/brand-realme.svg` (Logos vetoriais oficiais das marcas)
   - `img/1584E782-EF9F-4393-B773-A3A333E2E89A.PNG` (Bancada e atendente com uniforme)
-  - Fotos de peças e acessórios no atacado: películas de vidro e hidrogel, carregadores homologados, suportes veiculares para carro/moto, power banks, fones sem fio.
+  - Fotos de peças e componentes técnicos para lojistas: `pecas-hero-b2b.jpg`, `pecas-displays.jpg`, `pecas-baterias.jpg`, `pecas-cameras.jpg`, `pecas-conectores.jpg`, `pecas-flex-audio.jpg`, `pecas-insumos.jpg`.
 - Depoimentos reais de clientes e lojistas parceiros mapeados.
 
 ## Product Principles

@@ -109,4 +109,50 @@ document.addEventListener('DOMContentLoaded', () => {
       }
     });
   });
+
+  // 6. Theme Toggle (Modo Claro & Modo Escuro)
+  initThemeToggle();
 });
+
+/**
+ * Gerenciador de Tema Claro / Escuro
+ * Suporta persistência no localStorage e detecção automática de página
+ */
+function initThemeToggle() {
+  const THEME_STORAGE_KEY = 'infinitytech-theme';
+  const isLojistasPage = document.body.classList.contains('lojistas-body') || 
+                         window.location.pathname.includes('lojistas') || 
+                         window.location.href.includes('lojistas');
+  const defaultTheme = isLojistasPage ? 'dark' : 'light';
+
+  // Lê preferência do localStorage ou usa o padrão da página
+  const savedTheme = localStorage.getItem(THEME_STORAGE_KEY);
+  const currentTheme = savedTheme || defaultTheme;
+
+  // Garante aplicação no html
+  document.documentElement.setAttribute('data-theme', currentTheme);
+
+  const toggleButtons = document.querySelectorAll('.theme-toggle');
+
+  function updateToggleButtons(theme) {
+    toggleButtons.forEach(btn => {
+      const isDark = theme === 'dark';
+      btn.setAttribute('aria-label', isDark ? 'Alternar para tema claro' : 'Alternar para tema escuro');
+      btn.setAttribute('title', isDark ? 'Ativar tema claro' : 'Ativar tema escuro');
+    });
+  }
+
+  updateToggleButtons(currentTheme);
+
+  toggleButtons.forEach(btn => {
+    btn.addEventListener('click', (e) => {
+      e.preventDefault();
+      const activeTheme = document.documentElement.getAttribute('data-theme') || defaultTheme;
+      const newTheme = activeTheme === 'dark' ? 'light' : 'dark';
+
+      document.documentElement.setAttribute('data-theme', newTheme);
+      localStorage.setItem(THEME_STORAGE_KEY, newTheme);
+      updateToggleButtons(newTheme);
+    });
+  });
+}
