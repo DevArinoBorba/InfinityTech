@@ -163,7 +163,7 @@
   font-size: 1.25rem;
 }
 
-.hero-floating-text h4 {
+.hero-floating-text .floating-title {
   font-size: 0.95rem;
   font-weight: 800;
   color: var(--primary-dark);
@@ -194,7 +194,7 @@
   padding: 30px 24px;
   border: 1px solid var(--border-color);
   box-shadow: var(--shadow-sm);
-  transition: all var(--transition-normal);
+  transition: transform var(--transition-normal), border-color var(--transition-normal), box-shadow var(--transition-normal);
   display: flex;
   flex-direction: column;
   gap: 14px;
@@ -217,7 +217,7 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  transition: all var(--transition-fast);
+  transition: background var(--transition-fast), color var(--transition-fast);
 }
 
 .diff-card:hover .diff-icon-wrap {
@@ -254,7 +254,7 @@
   padding: 32px 28px;
   border: 1px solid var(--border-color);
   box-shadow: var(--shadow-sm);
-  transition: all var(--transition-normal);
+  transition: transform var(--transition-normal), border-color var(--transition-normal), box-shadow var(--transition-normal);
   display: flex;
   flex-direction: column;
   gap: 16px;
@@ -380,55 +380,43 @@
   margin-bottom: 50px;
 }
 
-.brand-pill {
-  display: inline-flex;
-  align-items: center;
-  gap: 10px;
-  padding: 10px 22px;
-  border-radius: var(--radius-full);
-  background: #FFFFFF;
-  border: 1px solid var(--border-color);
-  font-family: var(--font-heading);
-  font-weight: 700;
-  font-size: 0.95rem;
-  color: var(--primary);
-  box-shadow: var(--shadow-sm);
-  transition: var(--transition-fast);
-}
-
-.brand-pill:hover {
-  transform: translateY(-2px);
-  border-color: var(--secondary);
-  box-shadow: var(--shadow-md);
-  color: var(--accent);
-}
-
-.brand-pill-logo {
-  height: 20px;
-  width: auto;
-  max-width: 26px;
-  object-fit: contain;
-  display: inline-block;
-  flex-shrink: 0;
-  vertical-align: middle;
-}
-
-.brand-pill-logo.logo-samsung {
-  height: 18px;
-  max-width: 48px;
-}
-
-.brand-pill-logo.logo-realme {
-  height: 16px;
-  max-width: 52px;
-  border-radius: 3px;
-}
-
-.brand-pill-icon {
+.brand-logo-tile {
   display: inline-flex;
   align-items: center;
   justify-content: center;
+  height: 88px;
+  min-width: 88px;
+  padding: 16px 26px;
+  border-radius: var(--radius-lg);
+  background: #FFFFFF;
+  border: 1px solid var(--border-color);
+  box-shadow: var(--shadow-sm);
+  transition: transform var(--transition-fast), border-color var(--transition-fast), box-shadow var(--transition-fast);
+}
+
+.brand-logo-tile:hover {
+  transform: translateY(-4px);
+  border-color: var(--secondary);
+  box-shadow: var(--shadow-md);
+}
+
+.brand-logo-tile img {
+  height: 46px;
+  width: auto;
+  max-width: 100%;
+  object-fit: contain;
+  display: block;
+}
+
+.brand-tile-more {
+  flex-direction: column;
+  gap: 6px;
   color: var(--accent);
+  font-family: var(--font-heading);
+  font-weight: 700;
+  font-size: 0.8rem;
+  text-align: center;
+  white-space: nowrap;
 }
 
 .brands-showcase-grid {
@@ -445,7 +433,7 @@
   box-shadow: var(--shadow-md);
   display: flex;
   flex-direction: column;
-  transition: all var(--transition-normal);
+  transition: transform var(--transition-normal), border-color var(--transition-normal), box-shadow var(--transition-normal);
 }
 
 .brand-card-featured:hover {
@@ -557,7 +545,7 @@
   align-items: flex-start;
   gap: 16px;
   position: relative;
-  transition: all var(--transition-normal);
+  transition: transform var(--transition-normal), border-color var(--transition-normal), box-shadow var(--transition-normal);
   z-index: 2;
 }
 
@@ -623,7 +611,7 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  transition: all var(--transition-fast);
+  transition: background var(--transition-fast), color var(--transition-fast);
 }
 
 .step-card:hover .step-icon {
@@ -1132,7 +1120,7 @@
   box-shadow: 0 16px 40px rgba(0, 0, 0, 0.5);
 }
 
-[data-theme="dark"] .hero-floating-text h4 {
+[data-theme="dark"] .hero-floating-text .floating-title {
   color: #FFFFFF;
 }
 
@@ -1182,16 +1170,16 @@
   color: #94A3B8;
 }
 
-[data-theme="dark"] .brand-pill {
-  background: #0D1E30;
-  border-color: rgba(255, 255, 255, 0.1);
-  color: #F1F5F9;
+/* Os tiles de logo ficam sempre claros (independente do tema da página) —
+   é o que garante contraste para marcas com ícone monocromático escuro
+   (Apple, Motorola), então só a borda precisa de ajuste no escuro. */
+[data-theme="dark"] .brand-logo-tile {
+  border-color: rgba(14, 58, 99, 0.12);
 }
 
-[data-theme="dark"] .brand-pill:hover {
+[data-theme="dark"] .brand-logo-tile:hover {
   border-color: #2575DC;
-  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.4);
-  color: #60A5FA;
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.4);
 }
 
 [data-theme="dark"] .brand-card-featured {
@@ -1213,7 +1201,7 @@
 }
 
 [data-theme="dark"] .brand-card-icon {
-  background: rgba(255, 255, 255, 0.06);
+  background: #FFFFFF;
   border-color: rgba(255, 255, 255, 0.1);
 }
 
