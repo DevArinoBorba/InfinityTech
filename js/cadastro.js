@@ -45,6 +45,26 @@ document.addEventListener('DOMContentLoaded', () => {
     }
   }
 
+  // Consulta na planilha se o CNPJ já está cadastrado (usando Google Apps Script como DB)
+  async function checkLeadInSheet(cnpjDigits) {
+    if (!LEADS_SHEET_URL || LEADS_SHEET_URL.indexOf('COLE_AQUI') !== -1) {
+      return { found: false };
+    }
+    const controller = new AbortController();
+    const timeoutId = setTimeout(() => controller.abort(), 7000); // 7s timeout para absorver cold start do Apps Script
+    try {
+      const url = `${LEADS_SHEET_URL}?action=check&cnpj=${encodeURIComponent(cnpjDigits)}`;
+      const res = await fetch(url, { signal: controller.signal });
+      clearTimeout(timeoutId);
+      if (!res.ok) return { found: false };
+      const data = await res.json();
+      return data;
+    } catch (err) {
+      clearTimeout(timeoutId);
+      return { found: false };
+    }
+  }
+
   // Estado da validação do CNPJ: null | 'checking' | 'valid' | 'unverified' | 'invalid'
   let cnpjState = null;
 
@@ -70,9 +90,18 @@ document.addEventListener('DOMContentLoaded', () => {
       .replace(/(\d{5})(\d)/, '$1-$2');
   }
 
+  let validateTimeout = null;
   cnpjInput.addEventListener('input', () => {
     cnpjInput.value = maskCNPJ(cnpjInput.value);
-    if (cnpjState !== null) {
+    const digits = cnpjInput.value.replace(/\D/g, '');
+
+    if (validateTimeout) clearTimeout(validateTimeout);
+
+    if (digits.length === 14) {
+      validateTimeout = setTimeout(() => {
+        validateCNPJ();
+      }, 300);
+    } else if (cnpjState !== null) {
       cnpjState = null;
       setCnpjStatus('idle');
     }
@@ -181,6 +210,48 @@ document.addEventListener('DOMContentLoaded', () => {
     }
 
     cnpjState = 'checking';
+    setCnpjStatus('checking', 'Consultando cadastro...');
+
+    // 1. Consulta primeiro na planilha de leads da InfinityTech (Google Apps Script como DB)
+    try {
+      const sheetResult = await checkLeadInSheet(digits);
+      if (sheetResult && sheetResult.found && sheetResult.lead) {
+        const lead = sheetResult.lead;
+        if (lead.nome) nomeInput.value = lead.nome;
+        if (lead.endereco) enderecoInput.value = lead.endereco;
+        if (lead.telefone) contatoInput.value = lead.telefone;
+        if (lead.email) emailInput.value = lead.email;
+
+        cnpjState = 'valid';
+        setCnpjStatus('valid', `Cadastro ativo: ${lead.nome || 'Lojista parceiro'}! Redirecionando...`);
+        submitBtn.disabled = false;
+        submitBtn.textContent = 'Acessando Catálogo...';
+        formFeedback.textContent = 'Lojista já cadastrado! Redirecionando para o catálogo de atacado...';
+        formFeedback.className = 'form-feedback hint-success';
+
+        // Atualiza localStorage
+        const leadData = {
+          nome: lead.nome || nomeInput.value.trim(),
+          cnpj: cnpjInput.value.trim(),
+          endereco: lead.endereco || enderecoInput.value.trim(),
+          telefone: lead.telefone || contatoInput.value.trim(),
+          email: lead.email || emailInput.value.trim(),
+        };
+
+        try {
+          localStorage.setItem('infinitytech-lojista-cadastro', JSON.stringify(leadData));
+        } catch (err) {}
+
+        window.setTimeout(() => {
+          window.location.href = REDIRECT_URL;
+        }, 1200);
+        return;
+      }
+    } catch (err) {
+      // Falha na consulta da planilha segue adiante sem travar o lojista
+    }
+
+    // 2. Não encontrado na planilha: consulta na Receita Federal (BrasilAPI)
     setCnpjStatus('checking', 'Consultando na Receita Federal...');
 
     try {
@@ -209,13 +280,32 @@ document.addEventListener('DOMContentLoaded', () => {
       }
 
       cnpjState = 'valid';
-      setCnpjStatus('valid', `CNPJ validado: ${data.razao_social || 'empresa ativa'}.`);
+      setCnpjStatus('valid', `CNPJ validado: ${data.razao_social || 'empresa ativa'}. Preencha o contato para liberar seu acesso.`);
     } catch (err) {
       // API fora do ar / bloqueio de rede: não perde o lead, segue com validação local
       cnpjState = 'unverified';
-      setCnpjStatus('unverified', 'Não conseguimos confirmar automaticamente agora, mas o formato do CNPJ é válido. Nossa equipe vai confirmar por telefone.');
+      setCnpjStatus('unverified', 'Não conseguimos confirmar na Receita agora, mas o formato do CNPJ é válido. Preencha os campos para prosseguir.');
     }
   }
+
+  // Auto-reconhecimento de sessão local salva
+  try {
+    const savedLocal = localStorage.getItem('infinitytech-lojista-cadastro');
+    if (savedLocal) {
+      const parsed = JSON.parse(savedLocal);
+      if (parsed && parsed.cnpj) {
+        cnpjInput.value = maskCNPJ(parsed.cnpj);
+        if (parsed.nome) nomeInput.value = parsed.nome;
+        if (parsed.endereco) enderecoInput.value = parsed.endereco;
+        if (parsed.telefone) contatoInput.value = parsed.telefone;
+        if (parsed.email) emailInput.value = parsed.email;
+        cnpjState = 'valid';
+        setCnpjStatus('valid', `Sessão ativa identificada: ${parsed.nome || 'Lojista'}.`);
+        submitBtn.disabled = false;
+        submitBtn.textContent = 'Acessar Catálogo Diretamente';
+      }
+    }
+  } catch (e) {}
 
   cnpjInput.addEventListener('blur', validateCNPJ);
   cnpjInput.addEventListener('keydown', (e) => {
