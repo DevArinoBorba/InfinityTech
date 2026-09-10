@@ -16,7 +16,7 @@
   // ==========================================================================
   // URL do Web App gerado por apps-script/catalogo-sync.gs
   // (Implantar > Nova implantação > App da Web > copie a URL que termina em /exec)
-  const SYNC_URL = 'COLE_AQUI_A_URL_DO_APPS_SCRIPT';
+  const SYNC_URL = 'https://script.google.com/macros/s/AKfycbyyLS-FbhGyd9g1NBsw0u4VWMY6qkijMLxsnSRgtEVw71UjFCOKSCeirvuCV2EedceabA/exec';
 
   // Mesma planilha publicada que o catálogo lê — usada só para montar a
   // prévia do que vai mudar antes de enviar.
