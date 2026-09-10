@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover" />
+  <title>Atualizar Catálogo | InfinityTech (interno)</title>
+
+  <!-- Página de uso interno: fora dos buscadores e sem link no site -->
+  <meta name="robots" content="noindex, nofollow" />
+
+  <link rel="icon" type="image/png" href="../img/favicon.png" />
+
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,100..1000;1,9..40,100..1000&family=Sora:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
+
+  <link rel="stylesheet" href="../css/main.css" />
+  <link rel="stylesheet" href="../css/admin.css" />
+
+  <script>
+    (function() {
+      var saved = localStorage.getItem('infinitytech-theme');
+      document.documentElement.setAttribute('data-theme', saved || 'dark');
+    })();
+  </script>
+</head>
+<body class="admin-body">
+
+  <div class="admin-wrap">
+
+    <header class="admin-header">
+      <img src="../img/logo.png" alt="InfinityTech" width="720" height="360" />
+      <div>
+        <h1>Atualizar catálogo</h1>
+        <p>Envie o relatório de estoque do sistema — os preços do site são trocados na hora.</p>
+      </div>
+    </header>
+
+    <!-- ======================================================================
+         1. ARQUIVO
+         ====================================================================== -->
+    <section class="admin-painel">
+      <h2>1. Escolha a planilha</h2>
+      <p>O arquivo que o sistema exporta, do jeito que ele sai (.xlsx ou .csv). Não precisa editar nada antes.</p>
+
+      <div class="admin-dropzone" id="admin-dropzone" role="button" tabindex="0" aria-label="Selecionar planilha do relatório de estoque">
+        <svg width="34" height="34" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+          <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path>
+          <polyline points="17 8 12 3 7 8"></polyline>
+          <line x1="12" y1="3" x2="12" y2="15"></line>
+        </svg>
+        <strong>Arraste a planilha aqui</strong>
+        <span>ou clique para procurar no computador</span>
+      </div>
+
+      <input type="file" id="admin-file" accept=".xlsx,.xls,.csv" hidden />
+      <p class="admin-arquivo-nome" id="admin-arquivo-nome" hidden></p>
+
+      <div class="admin-aviso" id="admin-aviso" hidden></div>
+    </section>
+
+    <!-- ======================================================================
+         2. PRÉVIA
+         ====================================================================== -->
+    <section class="admin-painel" id="admin-resumo" hidden>
+      <h2>2. Confira o que vai mudar</h2>
+      <p>Comparação entre a planilha enviada e o catálogo que está no ar agora. Nada foi publicado ainda.</p>
+
+      <div class="admin-cards" id="admin-resumo-cards"></div>
+      <div id="admin-resumo-detalhes"></div>
+    </section>
+
+    <!-- ======================================================================
+         3. PUBLICAÇÃO
+         ====================================================================== -->
+    <section class="admin-painel" id="admin-publicar-wrap" hidden>
+      <h2>3. Publicar</h2>
+      <p>As categorias já cadastradas são mantidas automaticamente — só os preços e a lista de produtos são trocados.</p>
+
+      <div class="admin-publicar-linha">
+        <input type="password" id="admin-senha" class="admin-input" placeholder="Senha de publicação" autocomplete="current-password" />
+        <button type="button" class="btn btn-accent" id="admin-publicar">Publicar no catálogo</button>
+      </div>
+    </section>
+
+    <section class="admin-painel" id="admin-resultado" hidden></section>
+
+    <!-- ======================================================================
+         AJUDA
+         ====================================================================== -->
+    <section class="admin-painel">
+      <h2>Como funciona</h2>
+      <div class="admin-ajuda">
+        <ol>
+          <li>A planilha é lida aqui no navegador — nada é enviado enquanto você não confere a prévia.</li>
+          <li>Ao publicar, a lista de produtos e os preços da planilha do catálogo são reescritos.</li>
+          <li>A categoria de cada produto é preservada pelo nome. Produto que aparece pela primeira vez recebe uma categoria sugerida pelo nome, que pode ser corrigida direto na planilha depois.</li>
+          <li>O site leva até 5 minutos para mostrar os preços novos (cache do Google).</li>
+        </ol>
+      </div>
+    </section>
+
+  </div>
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/xlsx/0.18.5/xlsx.full.min.js"></script>
+  <script src="../js/admin-catalogo.js"></script>
+</body>
+</html>
